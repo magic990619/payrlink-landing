@@ -1,0 +1,690 @@
+h1 {
+  font-size: 2.3rem;
+  @media (max-width: 1200px) {
+    font-size: 1.8rem;
+  }
+}
+
+.bg_welcome {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(33, 29, 64, 0),
+    rgba(33, 29, 64, 0.3),
+    rgba(33, 29, 64, 1)
+  ),
+  url(../assets/1200/1.png);
+  background-size: cover !important;
+  height: 100%;
+}
+
+.bg_welcome {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(33, 29, 64, 0),
+      rgba(33, 29, 64, 0.3),
+      rgba(33, 29, 64, 1)
+    ),
+    url(../assets/1920/1.png);
+}
+.bg_about {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(33, 29, 64, 1),
+      rgba(33, 29, 64, 0),
+      rgba(33, 29, 64, 1)
+    ),
+    url(../assets/1920/2.png);
+}
+.bg_features {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(33, 29, 64, 1),
+      rgba(33, 29, 64, 0),
+      rgba(33, 29, 64, 1)
+    ),
+    url(../assets/1920/3.png);
+}
+.bg_roadmap {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(33, 29, 64, 1),
+      rgba(33, 29, 64, 0),
+      rgba(33, 29, 64, 1)
+    ),
+    url(../assets/1920/4.png);
+}
+
+.bg_tokenomics {
+  background: url(../assets/tokenomics-bg.png) no-repeat center center;
+  background-size: cover !important;
+  height: 100%;
+}
+
+.bg_presale {
+  background: url(../assets/pre-sale/1920.png) no-repeat center center;
+  background-size: cover !important;
+  height: 100%;
+}
+
+@media (min-width: 576px) {
+  .bg_welcome,
+  .bg_about,
+  .bg_features,
+  .bg_roadmap,
+  .bg_tokenomics,
+  .bg_presale,
+  .bg_team {
+    background-size: cover !important;
+    height: 100%;
+  }
+  .bg_welcome {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 0.3),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/576/1.png);
+  }
+  .bg_about {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/576/2.png);
+  }
+  .bg_features {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/576/3.png);
+  }
+  .bg_roadmap {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/576/4.png);
+  }
+  .bg_tokenomics {
+    background: url(../assets/576/5.png) no-repeat center center;
+  }
+  .bg_team {
+    background: url(../assets/576/6.png) no-repeat center center;
+  }
+  .bg_presale {
+    background: url(../assets/pre-sale/576.png) no-repeat center center;
+  }
+}
+
+@media (min-width: 768px) {
+  .bg_welcome,
+  .bg_about,
+  .bg_features,
+  .bg_roadmap,
+  .bg_tokenomics,
+  .bg_presale,
+  .bg_team {
+    background-size: cover !important;
+    height: 100%;
+  }
+  .bg_welcome {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 0.3),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/768/1.png);
+  }
+  .bg_about {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/768/2.png);
+  }
+  .bg_features {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/768/3.png);
+  }
+  .bg_roadmap {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/768/4.png);
+  }
+  .bg_tokenomics {
+    background: url(../assets/768/5.png) no-repeat center center;
+  }
+  .bg_team {
+    background: url(../assets/768/6.png) no-repeat center center;
+  }
+  .bg_presale {
+    background: url(../assets/pre-sale/768.png) no-repeat center center;
+  }
+}
+
+@media (min-width: 992px) {
+  .bg_welcome,
+  .bg_about,
+  .bg_features,
+  .bg_roadmap,
+  .bg_tokenomics,
+  .bg_presale,
+  .bg_team {
+    background-size: cover !important;
+    height: 100%;
+  }
+  .bg_welcome {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 0.3),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/992/1.png);
+  }
+  .bg_about {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/992/2.png);
+  }
+  .bg_features {
+    background: url(../assets/992/3.png) no-repeat center center;
+  }
+  .bg_roadmap {
+    background: url(../assets/992/4.png) no-repeat center center;
+  }
+  .bg_tokenomics {
+    background: url(../assets/992/5.png) no-repeat center center;
+  }
+  .bg_team {
+    background: url(../assets/992/6.png) no-repeat center center;
+  }
+  .bg_presale {
+    background: url(../assets/pre-sale/992.png) no-repeat center center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bg_welcome,
+  .bg_about,
+  .bg_features,
+  .bg_roadmap,
+  .bg_tokenomics,
+  .bg_presale,
+  .bg_team {
+    background-size: cover !important;
+    height: 100%;
+  }
+  .bg_welcome {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 0.3),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/1200/1.png);
+  }
+  .bg_about {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/1200/2.png);
+  }
+  .bg_features {
+    background: url(../assets/1200/3.png) no-repeat center center;
+  }
+  .bg_roadmap {
+    background: url(../assets/1200/4.png) no-repeat center center;
+  }
+  .bg_tokenomics {
+    background: url(../assets/1200/5.png) no-repeat center center;
+  }
+  .bg_team {
+    background: url(../assets/1200/6.png) no-repeat center center;
+  }
+  .bg_presale {
+    background: url(../assets/pre-sale/1200.png) no-repeat center center;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bg_welcome,
+  .bg_about,
+  .bg_features,
+  .bg_roadmap,
+  .bg_tokenomics,
+  .bg_presale,
+  .bg_team {
+    background-size: cover !important;
+    height: 100%;
+  }
+  .bg_welcome {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 0.3),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/1920/1.png);
+  }
+  .bg_about {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/1920/2.png);
+  }
+  .bg_features {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/1920/3.png);
+  }
+  .bg_roadmap {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(33, 29, 64, 1),
+        rgba(33, 29, 64, 0),
+        rgba(33, 29, 64, 1)
+      ),
+      url(../assets/1920/4.png);
+  }
+  .bg_tokenomics {
+    background: url(../assets/1920/5.png) no-repeat center center;
+  }
+  .bg_team {
+    background: url(../assets/1920/6.png) no-repeat center center;
+  }
+  .bg_presale {
+    background: url(../assets/pre-sale/1920.png) no-repeat center center;
+  }
+}
+
+.input_bg_gray {
+  font-size: 1.5em;
+  background-color: #3d3b51;
+  &:focus {
+    background-color: #3d3b51;
+  }
+}
+
+.main_title {
+  font-size: 3rem;
+}
+
+.main_layout {
+  background-color: #141132;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #25224e;
+}
+
+.text_white {
+  color: white;
+  &:hover {
+    color: white !important;
+  }
+}
+
+.btn_white {
+  color: #141132;
+  background-color: white;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.featur_img {
+  width: 80%;
+}
+
+.app_secondery {
+  background-color: #211d40;
+}
+
+.app_secondery-70 {
+  background-color: rgba(20, 17, 50,0.7);
+}
+
+.line_side {
+  border-right: 5px solid #565bb5;
+  @media (max-width: 768px) {
+    border-right: none;
+  }
+}
+
+.icon_round {
+  position: absolute;
+  background-color: #141132;
+  border: 10px solid #211d40;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: 0%;
+  border-radius: 200px;
+  transform: translate(-35%, -50%);
+  @media (max-width: 1600px) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.icon_round_left1 {
+  position: absolute;
+  background-color: #141132;
+  border: 10px solid #211d40;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 0%;
+  border-radius: 200px;
+  transform: translate(-10%, -50%);
+  @media (max-width: 1600px) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.feature_img {
+  max-width: 90%;
+  padding-right: 4em;
+}
+
+.feature_img_right {
+  max-width: 90%;
+  padding-left: 4em;
+}
+
+.roadmap_card {
+  background-color: #141132;
+  border-radius: 25px;
+  min-height: 250px;
+}
+
+.icon_right,
+.icon_left {
+  .icon_round {
+    position: absolute;
+    background-color: #141132;
+    border: 10px solid #211d40;
+    display: flex;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: -5%;
+    border-radius: 200px;
+    transform: translate(-50%, -50%);
+  }
+  .icon_line {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.icon_round_left {
+  position: absolute;
+  background-color: #141132;
+  border: 10px solid #211d40;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: 0;
+  border-radius: 200px;
+  transform: translate(60%, -50%);
+}
+
+.icon_top {
+  .icon_round {
+    position: absolute;
+    background-color: #141132;
+    border: 10px solid #211d40;
+    display: flex;
+    width: 150px;
+    height: 150px;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    border-radius: 200px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.icon_line {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-55%, -50%);
+}
+
+.icon_line_roadmap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.marquee_class {
+  background-color: #0b0920;
+  color: white;
+  font-weight: 600;
+}
+
+.card_div {
+  background-color: #141132;
+  padding: 2.5em;
+  border-radius: 25px;
+}
+
+.icon_over {
+  background-color: #25224e;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  border-radius: 30px;
+}
+
+.intro_section {
+  min-height: 80vh;
+}
+
+.adviser_section {
+  background-color: #141132;
+  border-radius: 25px;
+  min-height: 200px;
+  // padding: 3em;
+
+  .adviser_card {
+    background-color: #25224e;
+    padding: 2.5em;
+    border-radius: 25px;
+  }
+}
+
+.chart_sec {
+  background-color: #25224e;
+  border-radius: 25px;
+}
+
+.chart_container {
+  min-height: 50%;
+  min-width: 50%;
+  max-height: 100%;
+  max-width: 70%;
+
+  @media (max-width: 767px) {
+    min-height: 200px;
+    min-width: 200px;
+  }
+}
+
+.tokenomics_side {
+  .chart_sec {
+    background-color: #25224e;
+    border-radius: 25px;
+
+    .round_div {
+      height: 170px;
+      width: 170px;
+      border-radius: 100px;
+      border: 8px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .price_tag {
+      background-color: white;
+      color: #141132;
+      border-radius: 15px;
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+  .lable_top {
+    h4 {
+      background-color: #141132;
+      min-width: 200px;
+    }
+  }
+}
+
+.contact_us {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.submit_footer {
+  background-color: #141132;
+  color: white;
+  border: none;
+}
+
+.year_switch {
+  background-color: #141132;
+  border-radius: 50px;
+}
+
+.feature_card {
+  width: 75%;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+}
+
+.pre_block {
+  .app_secondery-70 {
+    padding-bottom: 200px;
+    border-radius: 0 0 15px 15px;
+    @media (max-width: 767.98px) {
+      padding-bottom: 100px;
+    }
+  }
+}
+
+.counter_block {
+  height: 0;
+  color: #141132;
+  width: fit-content;
+  .counter_white {
+    border-radius: 20px;
+    .text_large {
+      font-size: 4.5rem;
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  transform: translate(-0%, -230px);
+  @media (max-width: 767.98px) {
+    transform: translate(-0%, -150px);
+  }
+}
+
+.border_radius {
+  border-radius: 15px;
+}
+
+.bg_gray {
+  background-color: #3d3b51;
+}
+
+.w-fill-available {
+  width: -webkit-fill-available;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.custome_normal_modal {
+  .modal-header {
+    background-color: #25224e;
+    border-radius: 13px 13px 0 0;
+    button {
+      color: white;
+    }
+  }
+  .modal-content {
+    border-radius: 15px;
+    button {
+      color: #707070;
+    }
+  }
+}
+
+.modal-90w {
+  width: 90%;
+}
+
+.z_1000 {
+  z-index: 1000;
+}
+
+.error-msg {
+  text-align: center;
+  color: red;
+  padding: 20px 0;
+}
