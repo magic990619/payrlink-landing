@@ -380,7 +380,7 @@ h1 {
 }
 
 .line_side {
-  border-right: 5px solid #565bb5;
+  border-right: 3px solid #565bb5;
   @media (max-width: 768px) {
     border-right: none;
   }
@@ -687,4 +687,17 @@ h1 {
   text-align: center;
   color: red;
   padding: 20px 0;
+}
+
+.pb-0 {
+  padding-bottom: 0px !important;
+}
+
+.trans {
+  opacity: 0.9;
+}
+
+.flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }

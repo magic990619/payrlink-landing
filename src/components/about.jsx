@@ -21,6 +21,7 @@ const about = () => {
           <Button
             variant="light"
             className="btn_white mr-5 px-5 font-weight-bold"
+            onClick={() => {window.open("/Whitepaper.pdf", "_blank")}}
           >
             WHITEPAPER
           </Button>

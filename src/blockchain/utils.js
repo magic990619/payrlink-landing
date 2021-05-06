@@ -73,11 +73,11 @@ export const getCrowdsaleData = async () => {
   const closed = await crowdsale.call("crowdsaleClosed");
 
   return {
-    currentPrice: web3.utils.fromWei(currentPrice, 'ether'),
-    amountRaised: web3.utils.fromWei(amountRaised, 'ether'),
-    fundingGoal: web3.utils.fromWei(fundingGoal, 'ether'),
-    startTime,
-    endTime,
+    currentPrice: Number(currentPrice),
+    amountRaised: Number(web3.utils.fromWei(amountRaised, 'ether')),
+    fundingGoal: Number(web3.utils.fromWei(fundingGoal, 'ether')),
+    startTime: Number(startTime),
+    endTime: Number(endTime),
     closed
   }
 }

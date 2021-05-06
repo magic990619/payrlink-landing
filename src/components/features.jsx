@@ -7,6 +7,7 @@ import Wallet from "../assets/wallet.svg";
 import Transfer from "../assets/transfer.svg";
 import Lock from "../assets/lock.svg";
 import Line from "../assets/line.png";
+import LineFlipped from "../assets/line_flipped.png";
 
 const features = () => {
   return (
@@ -152,7 +153,7 @@ const features = () => {
                   </div>
                 </div>
               </div>
-              <img src={Line}  alt="" className="icon_line d-none d-xl-block" />
+              <img src={LineFlipped}  alt="" className="icon_line d-none d-xl-block" />
             </div>
           </Col>
 
