@@ -42,7 +42,7 @@ const team = () => {
         <Row className="app_secondery  px-5">
           <Col md="12" xl="12">
             <h1 className="text-white font-weight-bold mb-5 pb-3 pb-md-5 text-center">
-              Our Team
+              Core Team
             </h1>
           </Col>
         </Row>
@@ -50,42 +50,42 @@ const team = () => {
           <Col xl={10}>
             <Row>
               {teamData.map((e) => (
-                <Col md="6" xl="4" className="my-3">
-                  <div className="card_div h-100">
+                <Col xl="6" className="my-3">
+                  <div className="card_div h-100 trans">
                     <h3 className="font-weight-bold">{e.name}</h3>
                     <h5 className="text-white-50">{e.occupation}</h5>
                     <div className="d-flex my-4">
                       {e.linkdin && 
                         <div className="icon_over mr-3">
-                            <a href={e.linkdin}>
+                            <a href={e.linkdin} target="_blank">
                               <img src={Linkdin} width="15" alt="" />
                             </a>
                         </div>
                       }
                       {e.github && 
                         <div className="icon_over mr-3">
-                          <a href={e.github}>
+                          <a href={e.github} target="_blank">
                             <img src={Github} width="18" alt="" />
                           </a>
                         </div>
                       }
                       {e.twitter && 
                         <div className="icon_over mr-3">
-                          <a href={e.twitter}>
+                          <a href={e.twitter} target="_blank">
                             <img src={Twitter} width="15" alt="" />
                           </a>
                         </div>
                       }
                       {e.telegram && 
                         <div className="icon_over mr-3">
-                          <a href={e.telegram}>
+                          <a href={e.telegram} target="_blank">
                             <img src={Telegram} width="15" alt="" />
                           </a>
                         </div>
                       }
                       {e.discord && 
                         <div className="icon_over mr-3">
-                          <a href={e.discord}>
+                          <a href={e.discord} target="_blank">
                             <img src={Discord} width="15" alt="" />
                           </a>
                         </div>

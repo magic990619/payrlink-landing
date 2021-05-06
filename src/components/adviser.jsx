@@ -19,7 +19,7 @@ const adviser = () => {
     <Row className="app_secondery px-2 px-md-5 pb-5 justify-content-center">
         <Col md="12">
           <h1 className="text-white font-weight-bold my-5 pt-md-5 text-center">
-            Our Advisors
+            Advisors
           </h1>
         </Col>
         <Col md="10" className="adviser_section py-3 py-md-5">

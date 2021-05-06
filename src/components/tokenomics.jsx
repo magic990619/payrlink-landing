@@ -109,7 +109,7 @@ const tokenomics = () => {
             </h1>
           </Col>
           <Col lg={10} xl={5} className="px-xl-5 mb-5">
-            <div className="chart_sec p-3 pb-5 p-xl-5 h-100">
+            <div className="chart_sec p-3 pb-5 p-xl-5 h-100" style={{backgroundColor: 'transparent'}}>
               <div className="chart_container mx-auto py-5">
                 <Doughnut
                   id="chart-area"
@@ -152,7 +152,7 @@ const tokenomics = () => {
             </div>
           </Col>
           <Col lg={10} xl={5} className="px-xl-5 mb-5 tokenomics_side">
-            <div className="chart_sec mb-5 text-white text-center">
+            <div className="chart_sec mb-5 text-white text-center trans">
               <div className="lable_top d-flex justify-content-center">
                 <h4 className="font-weight-bold py-2 rounded-bottom">
                   PRE-SALE
@@ -170,7 +170,7 @@ const tokenomics = () => {
               </div>
             </div>
             <div className="chart_sec text-white text-center">
-              <div className="lable_top d-flex justify-content-center">
+              <div className="lable_top d-flex justify-content-center trans">
                 <h4 className="font-weight-bold py-2 rounded-bottom">ICO</h4>
               </div>
               <div>

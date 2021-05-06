@@ -12,6 +12,7 @@ import Footer from "../components/footer";
 import Sticky from 'react-sticky-el';
 
 const landing = () => {
+  const news = null;
   return (
       <Container fluid className="main_layout">
         <Row className="header py-4 px-md-5">
@@ -41,23 +42,20 @@ const landing = () => {
             </div>
           </Col>
         </Row>
-        <Sticky stickyClassName="z_1000">
-          <Row>
-            <Col xl="12" className="marquee_class">
-              <marquee>
-                <h6 className="text-white py-2 mb-0">
-                  News of the day ………….. News of the day ………….. News of the day
-                  ………….. News of the day ………….. News of the day ………….. News of the
-                  day ………….. News of the day ………….. News of the day ………….. News of
-                  the day ………….. News of the day ………….. News of the day …………..
-                  News of the day ………….. News of the day ………….. News of the day
-                  ………….. News of the day ………….. News of the day ………….. News of the
-                  day …………..{" "}
-                </h6>
-              </marquee>
-            </Col>
-          </Row>
-        </Sticky>
+        {
+          news &&
+            <Sticky stickyClassName="z_1000">
+              <Row>
+                <Col xl="12" className="marquee_class">
+                  <marquee>
+                    <h6 className="text-white py-2 mb-0">
+                      {news}
+                    </h6>
+                  </marquee>
+                </Col>
+              </Row>
+            </Sticky>
+        }
         <Welcome />
         <About />
         <Feature />
