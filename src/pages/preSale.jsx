@@ -19,9 +19,9 @@ const percentage = 25;
 const PreSale = (props) => {
 
   const [modalShow, setModalShow] = useState(false);
-  const { account, reset } = useWallet();
   const [salesData, setSalesData] = useState({});
   const [ethBalance, setEthBalance] = useState(0);
+  const { account, reset } = useWallet();
   const payr = usePayr();
   
   useEffect(() => {
