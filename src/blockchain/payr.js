@@ -1,5 +1,5 @@
 import * as utils from './utils';
-import Crowdsale from './contracts/PayrToken';
+import Crowdsale from './contracts/Crowdsale';
 import PayrToken from './contracts/PayrToken';
 import WEth from './contracts/WEth';
 
@@ -18,5 +18,19 @@ export class PAYR {
     this.crowdsale = new Crowdsale(contract_options);
     this.payrtoken = new PayrToken(contract_options);
     this.weth = new WEth(contract_options);
+  }
+
+  async getInvestedPAYR(account) {
+    const amount = await this.crowdsale.call("checkPAYRFunds", account);
+    return this.web3.utils.fromWei(amount, "ether");
+  }
+
+  async getAccountInfo(account) {
+    const ethBalance = await utils.getEthBalance(account);
+    const payrAmount = await this.getInvestedPAYR(account);
+    return {
+      ethBalance,
+      payrAmount
+    }
   }
 }

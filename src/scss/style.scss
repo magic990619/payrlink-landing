@@ -376,7 +376,7 @@ h1 {
 }
 
 .app_secondery-70 {
-  background-color: rgba(20, 17, 50,0.7);
+  background-color: rgba(20, 17, 50, 0.8);
 }
 
 .line_side {
@@ -700,4 +700,46 @@ h1 {
 .flip {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+.presale-loading-bg {
+  min-height: calc(100vh - 100px);
+  display: flex;
+}
+
+.presale-loading {
+  margin: auto;
+  background: rgba($color: #25224e, $alpha: 0.8);
+  padding: 20px 50px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.loading-text {
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+.attention-desc {
+  color: #CCCCCC;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.price-title {
+  color: #AAAAAA;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.account-loading {
+  text-align: center;
+  margin: auto;
+}
+
+.flex-div {
+  display: flex;
 }
