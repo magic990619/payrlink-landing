@@ -36,7 +36,7 @@ const landing = () => {
               <Button variant="light" className="btn_white mr-3">
                 ARBITRATION CENTER
               </Button>
-              <Button variant="light" className="btn_white">
+              <Button variant="light" className="btn_white" onClick={() => {window.open("https://farming.payrlink.com", "_blank")}}>
                 FARM
               </Button>
             </div>

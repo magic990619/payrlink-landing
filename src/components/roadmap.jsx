@@ -145,11 +145,11 @@ const roadmap = () => {
                           <div className="d-flex d-xl-none mb-3 justify-content-center align-items-center">
                             <img src={Seeting2} alt="" />
                           </div>
-                          <h6 className="text-white-50">(April)</h6>
+                          <h6 className="text-white-50">(April-May)</h6>
                           <h3>
-                            Pre-Sale
+                            Token Sale
                             <br />
-                            ICO
+                            Launch Beta Version
                             <br />
                             Farming Pool
                           </h3>
@@ -169,7 +169,7 @@ const roadmap = () => {
                           <div className="d-flex d-xl-none mb-3 justify-content-center align-items-center">
                             <img src={Rocket} alt="" />
                           </div>
-                          <h6 className="text-white-50">(May - June)</h6>
+                          <h6 className="text-white-50">(June - July)</h6>
                           <h3>
                             Launch
                             <br />
