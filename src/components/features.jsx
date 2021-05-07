@@ -47,11 +47,14 @@ const features = () => {
                     Crypto Escrow service
                   </h3>
                   <h5 className="font-weight-normal">
-                    Send cryptos to get secured by PayrLink.
+                    Send cryptos to get secured by PayrLink. We purpose to revolutionize the Escrow Industry with decentralization backed by Blockchain technology.
                   </h5>
                   <Button
                     variant="light font-weight-bold px-4 "
                     className="mt-4"
+                    onClick={() => {
+                      window.open("https://medium.com/@payrlink_official/decentralization-solution-to-the-future-escrow-43e340c689c7", "_blank")
+                    }}
                   >
                     Read More
                   </Button>
@@ -77,16 +80,17 @@ const features = () => {
                     Decentralized Arbitration
                   </h3>
                   <h5 className="font-weight-normal">
-                    The recipient's address is protected by ZKP scheme, so
-                    that no one can track, even PayrLink.
+                    Disputes will be resolved by distributed Jurors all around the world.
                   </h5>
                   <h5 className="font-weight-normal">
-                    All the transactions are managed in a private manner by
-                    PayrLink.
+                    Jurors have to be fully verified by PayrLink and they will vote to the court in a private manner.
                   </h5>
                   <Button
                     variant="light font-weight-bold px-4 "
                     className="mt-4"
+                    onClick={() => {
+                      window.open("https://medium.com/@payrlink_official/a-use-case-of-decentralized-arbitration-8c5ea669e844", "_blank")
+                    }}
                   >
                     Read More
                   </Button>
@@ -119,16 +123,17 @@ const features = () => {
                     Decentralized Arbitration
                   </h3>
                   <h5 className="font-weight-normal">
-                    The recipient's address is protected by ZKP scheme, so
-                    that no one can track, even PayrLink.
+                    Disputes will be resolved by distributed Jurors all around the world.
                   </h5>
                   <h5 className="font-weight-normal">
-                    All the transactions are managed in a private manner by
-                    PayrLink.
+                    Jurors have to be fully verified by PayrLink and they will vote to the court in a private manner.
                   </h5>
                   <Button
                     variant="light font-weight-bold px-4 "
                     className="mt-4"
+                    onClick={() => {
+                      window.open("https://medium.com/@payrlink_official/a-use-case-of-decentralized-arbitration-8c5ea669e844", "_blank")
+                    }}
                   >
                     Read More
                   </Button>
@@ -183,14 +188,17 @@ const features = () => {
                     Private Transfer
                   </h3>
                   <h5 className="font-weight-normal">
-                    Improved system of borrower's verification.
+                    The recipient's address is protected by ZKP scheme, so that no one can track, even PayrLink.
                   </h5>
                   <h5 className="font-weight-normal">
-                    Providing verification services for other services.
+                    All the transactions are managed in a private manner by PayrLink.
                   </h5>
                   <Button
                     variant="light font-weight-bold px-4 "
                     className="mt-4"
+                    onClick={() => {
+                      window.open("https://medium.com/@payrlink_official/introduction-to-payrlink-7af419c5e806", "_blank")
+                    }}
                   >
                     Read More
                   </Button>
