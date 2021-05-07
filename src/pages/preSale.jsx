@@ -23,6 +23,7 @@ const PreSale = (props) => {
   const [payrAmount, setPayrAmount] = useState(0);
   const [ethAmount, setEthAmount] = useState(0);
   const [ethBalance, setEthBalance] = useState(0);
+  const [errMsg, setErrMsg] = useState(null);
   const { account, reset } = useWallet();
   const payr = usePayr();
   
@@ -74,12 +75,35 @@ const PreSale = (props) => {
   }
 
   const handleAmountChange = (e) => {
-    console.log(e.target.value);
-    setEthAmount(e.target.value);
+    const newValue = e.target.value;
+    console.log(newValue);
+
+    if (newValue == "" || isNaN(newValue))
+      return;
+
+    setEthAmount(newValue);
   }
 
   const handleMaxClick = () => {
     setEthAmount(ethBalance);
+  }
+
+  const handleContribute = () => {
+    if (isNaN(ethAmount))
+      return;
+    if (Number(ethAmount) <= 0) {
+      setErrMsg("Invalid amount.");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+    }
+    if (Number(ethAmount) > Number(ethBalance)) {
+      setErrMsg("Insufficient balance.");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+    }
+    
   }
 
   return (
@@ -212,6 +236,12 @@ const PreSale = (props) => {
                                 <img src={ETH} alt="" className="mr-2" />
                                 <h3 className="mb-0">ETH</h3>
                               </div>
+                              {
+                                errMsg &&
+                                  <div className="err-msg">
+                                    {errMsg}
+                                  </div>
+                              }
                               <Form.Control
                                 as="input"
                                 value={ethAmount}
@@ -224,6 +254,7 @@ const PreSale = (props) => {
                                 <Button
                                   variant="light"
                                   className="btn_white w-fill-available"
+                                  onClick={handleContribute}
                                 >
                                   CONTRIBUTE
                                 </Button>
