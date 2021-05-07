@@ -24,12 +24,6 @@ const landing = () => {
               <img src={Logo} alt="" />
             </div>
             <div className="d-flex">
-              <Button
-                variant="link"
-                className="text_white font-weight-bold mr-2"
-              >
-                Apps
-              </Button>
               <Button variant="light" className="btn_white mr-3">
                 ESCROW SERVICE
               </Button>

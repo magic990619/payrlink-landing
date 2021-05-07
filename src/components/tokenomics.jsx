@@ -12,12 +12,13 @@ import Ellipse7 from "../assets/Ellipse7.png";
 import Cloud from "../assets/cloud.png";
 
 const labels = [
-  "Pool Mining",
-  "Public Sale",
-  "Reserved for the long-term operations",
-  "Reserved for the Dev team",
-  "Reserved for the Advisors",
-  "Pre-sale",
+  "Token Sales",
+  "Team",
+  "Advisors",
+  "Staking/Farming Rewards",
+  "Marketing Funds",
+  "Exchange Liquidity",
+  "Development Funds"
 ];
 
 const data = {
@@ -81,7 +82,7 @@ const data1 = [
   {
     icon: Ellipse7,
     perc: "8%",
-    name: "Development Fund",
+    name: "Development Funds",
   },
 ];
 
