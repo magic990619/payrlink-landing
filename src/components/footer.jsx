@@ -42,35 +42,35 @@ const footer = () => {
             <div className="pr-4 d-flex flex-column h-auto">
               <div>
                 <h5 className="mb-3">
-                  <a className="text-white font-weight-light" href="/Whitepaper.pdf" target="_blank">
+                  <a className="text-white font-weight-light" href="/Whitepaper.pdf" target="_blank" rel="noopener noreferrer">
                     WHITEPAPER
                   </a>
                 </h5>
                 <h5 className="mb-3">
-                  <a className="text-white font-weight-light" href="https://youtu.be/qC5DbPsap-0" target="_blank">
+                  <a className="text-white font-weight-light" href="https://youtu.be/qC5DbPsap-0" target="_blank" rel="noopener noreferrer">
                     VIDEO
                   </a>
                 </h5>
                 <h5 className="mb-3">
-                  <a className="text-white font-weight-light" href="https://medium.com/@payrlink_official/" target="_blank">
+                  <a className="text-white font-weight-light" href="https://medium.com/@payrlink_official/" target="_blank" rel="noopener noreferrer">
                     ARTICLES
                   </a>
                 </h5>
               </div>
               <div className="d-flex mt-auto">
-                <a href="/" target="_blank">
+                <a href="/" target="_blank" rel="noopener noreferrer">
                   <img src={Twitter}  alt="" className="mr-2" />
                 </a>
-                <a href="https://t.me/payrlink" target="_blank">
+                <a href="https://t.me/payrlink" target="_blank" rel="noopener noreferrer">
                   <img src={Telegram}  alt="" className="mr-2" />
                 </a>
-                <a href="/" target="_blank">
+                <a href="/" target="_blank" rel="noopener noreferrer">
                   <img src={Discord}  alt="" className="mr-2" />
                 </a>
-                <a href="https://youtu.be/qC5DbPsap-0" target="_blank">
+                <a href="https://youtu.be/qC5DbPsap-0" target="_blank" rel="noopener noreferrer">
                   <img src={Youtube}  alt="" className="mr-2" />
                 </a>
-                <a href="https://medium.com/@payrlink_official/" target="_blank">
+                <a href="https://medium.com/@payrlink_official/" target="_blank" rel="noopener noreferrer">
                   <img src={Medium}  alt="" className="mr-2" />
                 </a>
               </div>
@@ -92,7 +92,7 @@ const footer = () => {
                 </a>
               </h5>
               <h5 className="mb-3">
-                <a className="text-white font-weight-light" href="/presale" target="_blank">
+                <a className="text-white font-weight-light" href="/presale" target="_blank" rel="noopener noreferrer">
                   BUY TOKENS
                 </a>
               </h5>

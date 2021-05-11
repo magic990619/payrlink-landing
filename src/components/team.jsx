@@ -57,35 +57,35 @@ const team = () => {
                     <div className="d-flex my-4">
                       {e.linkdin && 
                         <div className="icon_over mr-3">
-                            <a href={e.linkdin} target="_blank">
+                            <a href={e.linkdin} target="_blank" rel="noopener noreferrer">
                               <img src={Linkdin} width="15" alt="" />
                             </a>
                         </div>
                       }
                       {e.github && 
                         <div className="icon_over mr-3">
-                          <a href={e.github} target="_blank">
+                          <a href={e.github} target="_blank" rel="noopener noreferrer">
                             <img src={Github} width="18" alt="" />
                           </a>
                         </div>
                       }
                       {e.twitter && 
                         <div className="icon_over mr-3">
-                          <a href={e.twitter} target="_blank">
+                          <a href={e.twitter} target="_blank" rel="noopener noreferrer">
                             <img src={Twitter} width="15" alt="" />
                           </a>
                         </div>
                       }
                       {e.telegram && 
                         <div className="icon_over mr-3">
-                          <a href={e.telegram} target="_blank">
+                          <a href={e.telegram} target="_blank" rel="noopener noreferrer">
                             <img src={Telegram} width="15" alt="" />
                           </a>
                         </div>
                       }
                       {e.discord && 
                         <div className="icon_over mr-3">
-                          <a href={e.discord} target="_blank">
+                          <a href={e.discord} target="_blank" rel="noopener noreferrer">
                             <img src={Discord} width="15" alt="" />
                           </a>
                         </div>

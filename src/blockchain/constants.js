@@ -6,11 +6,11 @@ export const rpcUrl = "https://kovan.infura.io/v3/2377373e9cc84228a6cea33645b511
 
 export const addresses = {
   payrtoken: {
-    42: '0xd9142C0b793ae749D5664719314b96192cda2bE9',
+    42: '0x81FCCd6866C8AC20A4f7Df70dFa7F03Fcc2e0497',
     1: '0x0',
   },
   crowdsale: {
-    42: '0x5c9C984884c62Ab5dE11A1526c78d4c430F93891',
+    42: '0x9f47CEd601dF92e6806Fa4Bf3B98De7DFD0fb1Cc',
     1: '0x0',
   },
   weth: {

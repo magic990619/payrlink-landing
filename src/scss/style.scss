@@ -338,6 +338,10 @@ h1 {
   &:focus {
     background-color: #3d3b51;
   }
+  &:disabled {
+    background-color: #3d3b51;
+    color: #222222 !important;
+  }
 }
 
 .main_title {

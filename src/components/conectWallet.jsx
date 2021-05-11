@@ -19,7 +19,7 @@ function ConectWallet(props) {
     if (wallet.error)
       setError("Try to connect on Kovan network.");
 
-  }, [wallet]);
+  }, [props, wallet]);
 
   const onChangeWallet = (data) => {
     if (data === 'metamask') {

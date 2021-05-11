@@ -14,7 +14,7 @@ const TimeCounter = (props) => {
         eventTime = props.timeTillDate;
       }
       else {
-        var eventTime = moment(
+        eventTime = moment(
           props.timeTillDate,
           props.timeFormat
         ).unix();
@@ -24,13 +24,21 @@ const TimeCounter = (props) => {
       var dur = moment.duration(diffTime * 1000, "milliseconds");
       if (dur > 0) {
         countDownTimer = setInterval(() => {
+          if (dur.seconds() <= 0) {
+            clearInterval(countDownTimer);
+            return;
+          }
           dur = moment.duration(dur - 1000, "milliseconds");
           setDuration(dur);
         }, 1000);
       }
       return () => {clearInterval(countDownTimer)};
-    }    
-  }, []);
+    }
+    else {
+      clearInterval(countDownTimer);
+      setDuration(moment.duration(0, "milliseconds"));
+    }
+  }, [props]);
 
   const toTwoDigit = (val) => {
     if (String(val).length === 1)

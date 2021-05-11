@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { Container, Row, Col, Button, Dropdown, Form } from "react-bootstrap";
 import { useWallet } from 'use-wallet';
 import LoaderSpinner from "react-loader-spinner";
@@ -14,48 +14,24 @@ import ConectWallet from "../components/conectWallet";
 import { Link } from "react-router-dom";
 import * as utils from '../blockchain/utils';
 import usePayr from '../hooks/usePayr';
+import useAllowance from "../hooks/useAllowance";
+import useAccountInfo from "../hooks/useAccountInfo";
+import useSalesData from "../hooks/useSalesData";
 
 const PreSale = (props) => {
 
   const [modalShow, setModalShow] = useState(false);
-  const [salesData, setSalesData] = useState(null);
-  const [accountLoading, setAccountLoading] = useState(false);
-  const [payrAmount, setPayrAmount] = useState(0);
   const [ethAmount, setEthAmount] = useState(0);
-  const [ethBalance, setEthBalance] = useState(0);
   const [errMsg, setErrMsg] = useState(null);
-  const { account, reset } = useWallet();
+  const [requestedApproval, setRequestedApproval] = useState(false);
+  const [requestedContribute, setRequestedContribute] = useState(false);
+  const [requestedWithdraw, setRequestedWithdraw] = useState(false);
+  const {account} = useWallet();
+  const salesData = useSalesData();
   const payr = usePayr();
+  const allowance = useAllowance();
+  const {accountLoading, ethBalance, payrAmount} = useAccountInfo();
   
-  useEffect(() => {
-    utils.getCrowdsaleData()
-      .then(data => {
-        setSalesData(data);
-      })
-      .catch(console.log);
-  }, []);
-
-  useEffect(() => {
-    if (account && payr) {
-      setAccountLoading(true);
-      payr.getAccountInfo(account)
-        .then(res => {
-          console.log(res);
-          setEthBalance(utils.toFixed(res.ethBalance, 4));
-          setPayrAmount(utils.toFixed(res.payrAmount, 4));
-          setAccountLoading(false);
-        })
-        .catch(e => {
-          console.log(e);
-          setAccountLoading(false);
-        });
-    }
-  }, [account, payr]);
-
-  const onDisconnectWallet = () => {
-    reset();
-  };
-
   const presaleStatusText = (status) => {
     switch (status) {
       case 1: return "Starts in";
@@ -74,11 +50,19 @@ const PreSale = (props) => {
     }
   }
 
+  const presalePriceText = (status) => {
+    switch (status) {
+      case 1: return "Initial Price";
+      case 2: return "Current Price";
+      case 3: return "Ending Price";
+      default: return "Initial Price";
+    }
+  }
+
   const handleAmountChange = (e) => {
     const newValue = e.target.value;
-    console.log(newValue);
 
-    if (newValue == "" || isNaN(newValue))
+    if (isNaN(newValue))
       return;
 
     setEthAmount(newValue);
@@ -88,23 +72,61 @@ const PreSale = (props) => {
     setEthAmount(ethBalance);
   }
 
-  const handleContribute = () => {
-    if (isNaN(ethAmount))
-      return;
-    if (Number(ethAmount) <= 0) {
+  const handleDisconnect = () => {
+    payr.disconnect();
+  };
+
+  const handleApprove = useCallback(async () => {
+    setRequestedApproval(true);
+    const txHash = await payr.approve();
+    if (!txHash) {
+      setErrMsg("Approve Error!");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+    }
+    setRequestedApproval(false);
+  }, [payr, setRequestedApproval]);
+
+
+  const handleContribute = useCallback(async () => {
+    if (ethAmount === "" || isNaN(ethAmount) || Number(ethAmount) <= 0) {
       setErrMsg("Invalid amount.");
       setTimeout(() => {
         setErrMsg(null);
       }, 2000);
+      return;
     }
     if (Number(ethAmount) > Number(ethBalance)) {
       setErrMsg("Insufficient balance.");
       setTimeout(() => {
         setErrMsg(null);
       }, 2000);
+      return;
     }
-    
-  }
+
+    setRequestedContribute(true);
+    const txHash = await payr.invest(ethAmount);
+    if (!txHash) {
+      setErrMsg("Contribute Error!");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+    }
+    setRequestedContribute(false);
+  }, [payr, ethAmount, ethBalance, setErrMsg, setRequestedContribute]);
+
+  const handleWithdraw= useCallback(async () => {
+    setRequestedWithdraw(true);
+    const txHash = await payr.withdraw();
+    if (!txHash) {
+      setErrMsg("Withdraw Error!");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+    }
+    setRequestedWithdraw(false);
+  }, [payr, setRequestedWithdraw]);
 
   return (
     <Container fluid className="main_layout">
@@ -136,7 +158,7 @@ const PreSale = (props) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#" onClick={onDisconnectWallet}>
+                <Dropdown.Item href="#" onClick={handleDisconnect}>
                   Disconnect
                 </Dropdown.Item>
               </Dropdown.Menu>
@@ -168,14 +190,13 @@ const PreSale = (props) => {
                 />
               </div>
             </Col>
-
             <Col sm={12} md={12} lg={9} xl={7} className="pb-3 my-4 my-xl-3">
               <Row className="px-4">
                 <Col
                   sm={12}
                   md={12}
-                  lg={account?6:12}
-                  xl={account?6:12}
+                  lg={account && salesData.status > 1?6:12}
+                  xl={account && salesData.status > 1?6:12}
                   className="px-5 text-center text-white "
                 >
                   <div
@@ -199,13 +220,13 @@ const PreSale = (props) => {
 
                     <h3 className="text-center">{salesData.amountRaised} ETH / {salesData.fundingGoal}</h3>
                     <div className="w-fit-content mx-auto">
-                      <h6 className="text-left mb-0 price-title">Current Price</h6>
+                      <h6 className="text-left mb-0 price-title">{presalePriceText(salesData.status)}</h6>
                       <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
                     </div>
                   </div>
                 </Col>
                 {
-                  account &&
+                  account && salesData.status > 1 &&
                     <Col
                       sm={12}
                       md={12}
@@ -224,41 +245,112 @@ const PreSale = (props) => {
                               width={50}
                             />
                           :
-                            <div>
+                            <div className="w-100">
                               <div className="d-md-flex justify-content-md-between">
                                 <h4 className="text-center mt-2">Bought</h4>
                                 <h4 className="text-center mt-2">{payrAmount} PAYR</h4>
                               </div>
-                              <div
-                                className="bg_gray d-flex align-items-center m py-1 px-3 rounded my-3 ml-auto"
-                                style={{ width: "fit-content" }}
-                              >
-                                <img src={ETH} alt="" className="mr-2" />
-                                <h3 className="mb-0">ETH</h3>
-                              </div>
+                              {
+                                salesData.status !== 3 && 
+                                  <div
+                                    className="bg_gray d-flex align-items-center m py-1 px-3 rounded my-3 ml-auto"
+                                    style={{ width: "fit-content" }}
+                                  >
+                                    <img src={ETH} alt="" className="mr-2" />
+                                    <h3 className="mb-0">ETH</h3>
+                                  </div>
+                              }
                               {
                                 errMsg &&
                                   <div className="err-msg">
                                     {errMsg}
                                   </div>
                               }
-                              <Form.Control
-                                as="input"
-                                value={ethAmount}
-                                onChange={handleAmountChange}
-                                className="input_bg_gray border-0 py-0 text-right text-white text-large"
-                                style={{height:"38px"}}
-                              />
-                              <h5 className="text-right text-white-50 clickable" onClick={handleMaxClick}>Max: {ethBalance}</h5>
-                              <div className="mt-3">
-                                <Button
-                                  variant="light"
-                                  className="btn_white w-fill-available"
-                                  onClick={handleContribute}
-                                >
-                                  CONTRIBUTE
-                                </Button>
-                              </div>
+                              {
+                                salesData.status === 3 ? 
+                                  payrAmount > 0 && (
+                                    requestedWithdraw?
+                                      <div className="mt-3">
+                                        <Button
+                                          variant="light"
+                                          className="btn_white w-fill-available"
+                                          disabled
+                                        >
+                                          Withdrawing...
+                                        </Button>
+                                      </div>
+                                    :
+                                      <div className="mt-3">
+                                        <Button
+                                          variant="light"
+                                          className="btn_white w-fill-available"
+                                          onClick={handleWithdraw}
+                                        >
+                                          Withdraw
+                                        </Button>
+                                      </div>
+                                  )
+                                : <>
+                                  <Form.Control
+                                    as="input"
+                                    value={ethAmount}
+                                    onChange={handleAmountChange}
+                                    className="input_bg_gray border-0 py-0 text-right text-white text-large"
+                                    style={{height:"38px"}}
+                                    disabled={!allowance || requestedApproval || requestedContribute}
+                                  />
+                                  <h5 className="text-right text-white-50 clickable" onClick={handleMaxClick}>Max: {ethBalance}</h5>
+                                  {
+                                    allowance?
+                                      (
+                                        requestedContribute?
+                                          <div className="mt-3">
+                                            <Button
+                                              variant="light"
+                                              className="btn_white w-fill-available"
+                                              disabled
+                                            >
+                                              Contributing...
+                                            </Button>
+                                          </div>
+                                        :
+                                          <div className="mt-3">
+                                            <Button
+                                              variant="light"
+                                              className="btn_white w-fill-available"
+                                              onClick={handleContribute}
+                                            >
+                                              Contribute
+                                            </Button>
+                                          </div>
+                                      )
+                                    : (
+                                      requestedApproval?
+                                        <div className="mt-3">
+                                          <Button
+                                            variant="light"
+                                            className="btn_white w-fill-available"
+                                            disabled
+                                          >
+                                            Approving...
+                                          </Button>
+                                        </div>
+                                      :
+                                        <div className="mt-3">
+                                          <Button
+                                            variant="light"
+                                            className="btn_white w-fill-available"
+                                            onClick={handleApprove}
+                                          >
+                                            Approve
+                                          </Button>
+                                        </div>
+                                    )
+                                  }
+                                </>
+                              }
+                              
+                              
                             </div>
                         }
                         
