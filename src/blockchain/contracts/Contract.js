@@ -12,17 +12,16 @@ class Contract {
   call(method, ...params) {
     return new Promise((resolve, reject) => {
       const account = this.web3.currentProvider.selectedAddress;
-      console.log(account);
       this.contract.methods[method](...params).call({from: account})
         .then(resolve)
         .catch(reject)
     });
   }
 
-  send(method, ...params) {
+  send(method, options, ...params) {
     return new Promise((resolve, reject) => {
       const account = this.web3.currentProvider.selectedAddress;
-      this.contract.methods[method](...params).send({from: account})
+      this.contract.methods[method](...params).send({...options, from: account})
         .then(resolve)
         .catch(reject)
     });

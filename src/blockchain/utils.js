@@ -58,26 +58,43 @@ export const getEthChainInfo = () => {
 export const getEthBalance = async (addr) => {
   const web3 = getInfuraWeb3();
   const balance = await web3.eth.getBalance(addr);
-  return web3.utils.fromWei(balance, 'ether');
+  return web3.utils.fromWei(balance);
 }
 
 export const getCrowdsaleData = async () => {
   const web3 = getInfuraWeb3();
   const crowdsale = new Crowdsale({web3, networkId: constants.chainId});
   
-  const currentPrice= await crowdsale.call("getCurrentPrice");
+  const currentPrice = await crowdsale.call("getCurrentPrice");
   const amountRaised = await crowdsale.call("amountRaised");
-  const fundingGoal = await crowdsale.call("fundingGoal");
   const startTime = await crowdsale.call("start");
   const endTime = await crowdsale.call("deadline");
   const closed = await crowdsale.call("crowdsaleClosed");
 
-  return {
-    currentPrice: Number(currentPrice),
-    amountRaised: Number(web3.utils.fromWei(amountRaised, 'ether')),
-    fundingGoal: Number(web3.utils.fromWei(fundingGoal, 'ether')),
+  const data = {
+    currentPrice: toFixed(Number(currentPrice), 1),
+    amountRaised: toFixed(Number(web3.utils.fromWei(amountRaised)), 1),
+    fundingGoal: 300,
     startTime: Number(startTime),
     endTime: Number(endTime),
     closed
   }
+
+  // data.startTime = Math.floor(Date.UTC(2021, 4, 11, 10, 0, 0) / 1000);
+  // data.endTime = Math.floor(Date.UTC(2021, 4, 11, 10, 9, 0) / 1000);
+  const percentage = toFixed(data.amountRaised / data.fundingGoal * 100, 1);
+  const now = Math.floor(Date.now() / 1000);
+
+  var status = 0;
+  if (closed) status = 3;
+  else if (now < data.startTime) status = 1;
+  else if (now < data.endTime) status = 2;
+  else status = 3;
+
+  return {...data, percentage, status};
+}
+
+export const toFixed = (num, digit) => {
+  var fixed_num = Number(num).toFixed(digit)
+  return Number(fixed_num.toString());
 }

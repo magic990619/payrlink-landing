@@ -11,7 +11,7 @@ export const Context = createContext({
 
 const PayrProvider = ({ children }) => {
   const wallet = useWallet();
-  const { account, connector, status, connect, ethereum } = wallet;
+  const { account, connector, status, connect, ethereum, reset } = wallet;
   const [userAccount, setUserAccount] = useState();
   const [payr, setPayr] = useState();
 
@@ -31,6 +31,12 @@ const PayrProvider = ({ children }) => {
     }
   }, [status, setUserAccount]);
 
+  const disconnect = useCallback(async () => {
+    reset();
+    setUserAccount(null);
+    localStorage.removeItem('account');
+  }, [reset, setUserAccount])
+
   const handleConnectMetamask = useCallback(() => {
     connect('injected');
   }, [connect]);
@@ -38,6 +44,14 @@ const PayrProvider = ({ children }) => {
   const handleConnectWalletConnect = useCallback(() => {
     connect('walletconnect');
   }, [connect]);
+  
+  useEffect(() => {
+    const checkConnection = setTimeout(() => {
+      fetchConnection();
+    }, CHECK_WALLET_STATUS_REFRESH_RATE);
+
+    return () => clearTimeout(checkConnection);
+  }, [status, fetchConnection])
 
   useEffect(() => {
     checkLocalUserAccount();
@@ -49,15 +63,7 @@ const PayrProvider = ({ children }) => {
     if (connector) {
       localStorage.setItem('walletProvider', connector);
     }
-  }, [account, userAccount]);
-
-  useEffect(() => {
-    const checkConnection = setTimeout(() => {
-      fetchConnection();
-    }, CHECK_WALLET_STATUS_REFRESH_RATE);
-
-    return () => clearTimeout(checkConnection);
-  }, [status, fetchConnection]);
+  }, [account, userAccount, connector, checkLocalUserAccount]);
 
   useEffect(() => {
     const localAccount = localStorage.getItem('account');
@@ -71,12 +77,12 @@ const PayrProvider = ({ children }) => {
         handleConnectWalletConnect();
       }
     }
-  }, []);
+  }, [account, handleConnectMetamask, handleConnectWalletConnect]);
 
   useEffect(() => {
     if (ethereum) {
       const chainId = Number(ethereum.chainId);
-      const payrObj = new PAYR(ethereum, chainId, {
+      const payrObj = new PAYR(ethereum, chainId, disconnect, {
         defaultAccount: ethereum.selectedAddress,
         defaultConfirmations: 1,
         autoGasMultiplier: 1.5,
@@ -88,7 +94,7 @@ const PayrProvider = ({ children }) => {
       });
       setPayr(payrObj);
     }
-  }, [ethereum]);
+  }, [ethereum, disconnect]);
 
   return <Context.Provider value={{ payr }}>{children}</Context.Provider>
 }
