@@ -24,7 +24,7 @@ const TimeCounter = (props) => {
       var dur = moment.duration(diffTime * 1000, "milliseconds");
       if (dur > 0) {
         countDownTimer = setInterval(() => {
-          if (dur.seconds() <= 0) {
+          if (dur.asSeconds() <= 0) {
             clearInterval(countDownTimer);
             return;
           }
@@ -38,7 +38,7 @@ const TimeCounter = (props) => {
       clearInterval(countDownTimer);
       setDuration(moment.duration(0, "milliseconds"));
     }
-  }, [props]);
+  }, [props.timeTillDate, props.status, props.timeFormat]);
 
   const toTwoDigit = (val) => {
     if (String(val).length === 1)
