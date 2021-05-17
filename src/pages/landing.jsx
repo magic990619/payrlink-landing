@@ -24,19 +24,13 @@ const landing = () => {
               <img src={Logo} alt="" />
             </div>
             <div className="d-flex">
-              <Button
-                variant="link"
-                className="text_white font-weight-bold mr-2"
-              >
-                Apps
-              </Button>
               <Button variant="light" className="btn_white mr-3">
                 ESCROW SERVICE
               </Button>
               <Button variant="light" className="btn_white mr-3">
                 ARBITRATION CENTER
               </Button>
-              <Button variant="light" className="btn_white">
+              <Button variant="light" className="btn_white" onClick={() => {window.open("https://farming.payrlink.com", "_blank")}}>
                 FARM
               </Button>
             </div>

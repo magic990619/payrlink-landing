@@ -8,15 +8,17 @@ import Ellipse3 from "../assets/Ellipse3.png";
 import Ellipse4 from "../assets/Ellipse4.png";
 import Ellipse5 from "../assets/Ellipse5.png";
 import Ellipse6 from "../assets/Ellipse6.png";
+import Ellipse7 from "../assets/Ellipse7.png";
 import Cloud from "../assets/cloud.png";
 
 const labels = [
-  "Pool Mining",
-  "Public Sale",
-  "Reserved for the long-term operations",
-  "Reserved for the Dev team",
-  "Reserved for the Advisors",
-  "Pre-sale",
+  "Token Sales",
+  "Team",
+  "Advisors",
+  "Staking/Farming Rewards",
+  "Marketing Funds",
+  "Exchange Liquidity",
+  "Development Funds"
 ];
 
 const data = {
@@ -30,6 +32,7 @@ const data = {
         "#049E1C",
         "#910792",
         "#0398C3",
+        "#FF9600",
       ],
       borderColor: [
         "#3266CC",
@@ -38,8 +41,9 @@ const data = {
         "#049E1C",
         "#910792",
         "#0398C3",
+        "#FF9600",
       ],
-      data: [40, 20, 20, 10, 5, 5],
+      data: [38, 7, 5, 19, 8, 15, 8],
     },
   ],
 };
@@ -47,52 +51,57 @@ const data = {
 const data1 = [
   {
     icon: Ellipse1,
-    perc: "40%",
-    name: "Pool Mining",
+    perc: "38%",
+    name: "Token Sales",
   },
   {
     icon: Ellipse2,
-    perc: "20%",
-    name: "Public Sale",
+    perc: "7%",
+    name: "Team",
   },
   {
     icon: Ellipse3,
-    perc: "20%",
-    name: "Reserved for the long-term operations",
+    perc: "5%",
+    name: "Advisors",
   },
   {
     icon: Ellipse4,
-    perc: "10%",
-    name: "Reserved for the Dev team",
+    perc: "19%",
+    name: "Staking/Farming Rewards",
   },
   {
     icon: Ellipse5,
-    perc: "5%",
-    name: "Reserved for the Advisors",
+    perc: "8%",
+    name: "Marketing Funds",
   },
   {
     icon: Ellipse6,
-    perc: "5%",
-    name: "Pre-sale",
+    perc: "15%",
+    name: "Exchange Liquidity",
+  },
+  {
+    icon: Ellipse7,
+    perc: "8%",
+    name: "Development Funds",
   },
 ];
 
 const icoData = [
   {
+    raised: "< 50 ETH",
+    bonus: "3.4% ~ 4.3%",
+  },
+  {
+    raised: "< 100 ETH",
+    bonus: "2.1% ~ 3.4%",
+  },
+  {
+    raised: "< 200 ETH",
+    bonus: "1.1% ~ 2.1%",
+  },
+  {
     raised: "< 300 ETH",
-    bonus: "7.8% ~ 10.5%",
-  },
-  {
-    raised: "< 500 ETH",
-    bonus: "5.2% ~ 7.8%",
-  },
-  {
-    raised: "< 700 ETH",
-    bonus: "2.6% ~ 5.2%",
-  },
-  {
-    raised: "< 1000 ETH",
-    bonus: "0% ~ 2.6%",
+    bonus: "0% ~ 1.1%",
   },
 ];
 
@@ -159,28 +168,28 @@ const tokenomics = () => {
                 </h4>
               </div>
               <div>
-                <h4 className="my-4">Target - to Raise ETH 300</h4>
+                <h4 className="my-4">Target - to Raise ETH 540</h4>
                 <div className="round_div mx-auto my-5">
                   <h1>10%</h1>
                   <h5>Special Bonus</h5>
                 </div>
                 <div className="pb-5">
-                  <span className="price_tag px-5 py-2">Price 1 PAYR</span>
+                  <span className="price_tag px-5 py-2">Price 1 PAYR: $0.031</span>
                 </div>
               </div>
             </div>
             <div className="chart_sec text-white text-center">
               <div className="lable_top d-flex justify-content-center trans">
-                <h4 className="font-weight-bold py-2 rounded-bottom">ICO</h4>
+                <h4 className="font-weight-bold py-2 rounded-bottom">PUBLIC-SALE</h4>
               </div>
               <div>
-                <h4 className="my-4">Target – to Raise ETH 1,000</h4>
+                <h4 className="my-4">Target – to Raise ETH 300</h4>
 
                 <div className="pb-5 mt-5">
-                  <span className="price_tag px-5 py-2">Price 1 PAYR</span>
+                  <span className="price_tag px-5 py-2">Price 1 PAYR: $0.034</span>
                 </div>
                 <div>
-                  <h4>Bonus for ICO:</h4>
+                  <h4>Bonus for IDO:</h4>
                   <table className="d-flex justify-content-center pb-5">
                     <tbody>
                       <tr className="mb-3">
