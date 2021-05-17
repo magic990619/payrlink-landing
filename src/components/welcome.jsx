@@ -11,19 +11,19 @@ const welcome = () => {
     <Row className="align-items-center justify-content-center p-3 p-xl-5 intro_section bg_welcome">
       <Col xl={12} className="text-center text-xl-center">
         <div className="mb-3 mb-xl-4">
-          <a href="https://t.me/payrlink" target="_blank">
+          <a href="https://t.me/payrlink" target="_blank" rel="noopener noreferrer">
             <img src={logo1} alt="" className="mr-2" />
           </a>
-          <a href="https://github.com/payrlink" target="_blank">
+          <a href="https://github.com/payrlink" target="_blank" rel="noopener noreferrer">
             <img src={logo2} alt="" className="mr-2" />
           </a>
-          <a href="https://medium.com/@payrlink_official/" target="_blank">
+          <a href="https://medium.com/@payrlink_official/" target="_blank" rel="noopener noreferrer">
             <img src={logo3} alt="" className="mr-2" />
           </a>
-          <a href="/" target="_blank">
+          <a href="https://twitter.com/PayrOfficial" target="_blank" rel="noopener noreferrer">
             <img src={logo4} alt="" className="mr-2" />
           </a>
-          <a href="https://youtu.be/qC5DbPsap-0" target="_blank">
+          <a href="https://youtu.be/qC5DbPsap-0" target="_blank" rel="noopener noreferrer">
             <img src={logo5} alt="" className="mr-2" />
           </a>
         </div>
