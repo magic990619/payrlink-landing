@@ -7,32 +7,52 @@ import Discord from "../assets/discord.svg";
 import Telegram from "../assets/telegram.svg";
 import Behance from "../assets/behance.svg";
 
+import Boiko from "../assets/avatar/BoikoJin.png"
+import Jason from "../assets/avatar/Jason.png"
+import Blake from "../assets/avatar/Blake.png"
+import Gabriel from "../assets/avatar/Gabriel.png"
+import Sunil from "../assets/avatar/Sunil.jpg"
+import Tarun from "../assets/avatar/Tarun.jpg"
+import Santosh from "../assets/avatar/Santosh.jpg"
+
 const teamData = [
   {
     name: "Boiko J.",
     occupation: "(Founder & CEO)",
     linkedin: "https://www.linkedin.com/in/maxsim-boiko-jin-1877b7205/",
     github: "https://github.com/leonboripgs",
-    discreption: "Maxsim Boiko is highly motivated Founder of PayrLink with a combined experience in blockchain, which includes leadership, program and organizational development. Specialized expertise in the development of innovative Defi and he is pushing Payrlink to the goal of next generation Escrow."
+    discreption: "Boiko is highly motivated Founder of PayrLink with a combined experience in blockchain, which includes leadership, program and organizational development. Specialized expertise in the development of innovative Defi and he is pushing Payrlink to the goal of next generation Escrow.",
+    avatar: Boiko
   },
   {
     name: "Jason M.",
     occupation: "(CTO)",
     github: "https://github.com/IntelMin",
-    discreption: "Jason has spent multiple years building up blockchain infrastructure for several organizations with combined experience in FinTech, Data Science, Software Engineering, and Blockchain Industry."
+    discreption: "Jason has spent multiple years building up blockchain infrastructure for several organizations with combined experience in FinTech, Data Science, Software Engineering, and Blockchain Industry.",
+    avatar: Jason
   },
   {
     name: "Blake L.",
     occupation: "(CIO & HR)",
     linkedin: "https://www.linkedin.com/in/blake-lin-aaa876203/",
     github: "https://github.com/magic990619",
-    discreption: "Blake is the Chief Information Officer and Hiring Manager at PayrLink with more than six years of experience with creating and promoting blockchain projects. Former Lead Dev at Codiant, Contributor at Yam, and community builder. He connects people, combining his technical and business background in order to push ideas to success."
+    discreption: "Blake is the Chief Information Officer and Hiring Manager at PayrLink with more than six years of experience with creating and promoting blockchain projects. Former Lead Dev at Codiant, Contributor at Yam, and community builder.",
+    avatar: Blake
+  },
+  {
+    name: "Sunil C.",
+    occupation: "(Senior Developer)",
+    telegram: "https://t.me/sunil_rojariya",
+    linkedin: "http://www.linkedin.com/in/sunil-rojariya",
+    discreption: "Sunil has more than 4 years experience in full-stack development with great skills of React.js, PHP, and Node.js.",
+    avatar: Sunil
   },
   {
     name: "Gabriel M.",
-    occupation: "(Senior Full-Stack Developer)",
+    occupation: "(Blockchain Engineer)",
     github: "https://github.com/gabriel-reine-13",
-    discreption: "A professional full-stack blockchain engineer. Gabriel has become quite a familiar face in the crypto community from helping several top projects with management, advisory, and dev work."
+    discreption: "A professional full-stack blockchain engineer. Gabriel has become quite a familiar face in the crypto community from helping several top projects with management, advisory, and dev work.",
+    avatar: Gabriel
   },
   {
     name: "Tarun T.",
@@ -40,23 +60,17 @@ const teamData = [
     telegram: "https://t.me/tarun_thusu",
     linkedin: "https://www.linkedin.com/in/tarun-thusu-b6706613a",
     behance: "https://www.behance.net/tarun_thusu",
-    discreption: "Tarun is an insightful individual with 3+ years of expertise in the UI/UX designing. He is passionate about utilising his creative & technical skills and work with the community to provide unique designs."
-  },
-  {
-    name: "Sunil C.",
-    occupation: "(Full-Stack Developer)",
-    telegram: "https://t.me/sunil_rojariya",
-    linkedin: "http://www.linkedin.com/in/sunil-rojariya",
-    discreption: "Sunil has more than 4 years experience in full-stack development with great skills of React.js, PHP, and Node.js."
+    discreption: "Tarun is an insightful individual with 3+ years of expertise in the UI/UX designing. He is passionate about utilising his creative & technical skills and work with the community to provide unique designs.",
+    avatar: Tarun
   },
   {
     name: "Santosh K.",
     occupation: "(Full-Stack Developer)",
-    github: "https://github.com/santoshwebinno",
+    telegram: "https://t.me/sanwebnet",
     linkedin: "https://www.linkedin.com/in/santosh-k-thakur-a3372044",
-    discreption: "Santosh has more than 6 years of experience in website development and SEO optimization. Well-versed in React.js, Wordpress, Magento and Node.js."
+    discreption: "An expert in React.js, Node.js, ...   with multiple years of experience along with this, determining strategic directions, leading long-range planning with industry leaders is his strength. Hands-on experience with handling the process of product development.",
+    avatar: Santosh
   },
-  
 ];
 
 const team = () => {
@@ -73,10 +87,16 @@ const team = () => {
           <Col xl={10}>
             <Row>
               {teamData.map((e) => (
-                <Col xl="4" className="my-3">
-                  <div className="card_div h-100 trans">
+                <Col xl="6" className="my-3 my-col">
+                  <div className="card_div h-100 trans member-div">
                     <h3 className="font-weight-bold">{e.name}</h3>
                     <h5 className="text-white-50">{e.occupation}</h5>
+                    <div className="avatar-div">
+                      {
+                        e.avatar && 
+                          <img className="avatar" src={e.avatar} alt="" />
+                      }                      
+                    </div>
                     <div className="d-flex my-4">
                       {e.linkedin && 
                         <div className="icon_over mr-3">
