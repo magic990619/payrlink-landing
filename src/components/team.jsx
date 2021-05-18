@@ -9,7 +9,7 @@ import Behance from "../assets/behance.svg";
 
 const teamData = [
   {
-    name: "Maxsim Boiko J.",
+    name: "Boiko J.",
     occupation: "(Founder & CEO)",
     linkedin: "https://www.linkedin.com/in/maxsim-boiko-jin-1877b7205/",
     github: "https://github.com/leonboripgs",
@@ -26,7 +26,7 @@ const teamData = [
     occupation: "(CIO & HR)",
     linkedin: "https://www.linkedin.com/in/blake-lin-aaa876203/",
     github: "https://github.com/magic990619",
-    discreption: "Blake is the Chief Information Officer and Hiring Manager at PayrLink with more than six years of experience with creating and promoting blockchain projects. Former Lead Dev at Codiant, Contributor at Yam, and community builder. Blake connects people, combining his technical and business background in order to push ideas to success."
+    discreption: "Blake is the Chief Information Officer and Hiring Manager at PayrLink with more than six years of experience with creating and promoting blockchain projects. Former Lead Dev at Codiant, Contributor at Yam, and community builder. He connects people, combining his technical and business background in order to push ideas to success."
   },
   {
     name: "Gabriel M.",
@@ -46,7 +46,6 @@ const teamData = [
     name: "Sunil C.",
     occupation: "(Full-Stack Developer)",
     telegram: "https://t.me/sunil_rojariya",
-    github: "https://github.com/kumarsuniljat",
     linkedin: "http://www.linkedin.com/in/sunil-rojariya",
     discreption: "Sunil has more than 4 years experience in full-stack development with great skills of React.js, PHP, and Node.js."
   },
@@ -54,7 +53,8 @@ const teamData = [
     name: "Santosh K.",
     occupation: "(Full-Stack Developer)",
     github: "https://github.com/santoshwebinno",
-    discreption: ""
+    linkedin: "https://www.linkedin.com/in/santosh-k-thakur-a3372044",
+    discreption: "Santosh has more than 6 years of experience in website development and SEO optimization. Well-versed in React.js, Wordpress, Magento and Node.js."
   },
   
 ];
