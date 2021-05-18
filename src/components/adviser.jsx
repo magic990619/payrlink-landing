@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import Linkdin from "../assets/linkdin.svg";
+import Linkedin from "../assets/linkedin.svg";
 import Github from "../assets/github.svg";
 import Twitter from "../assets/twitter.svg";
 import Discord from "../assets/discord.svg";
@@ -30,10 +30,10 @@ const adviser = () => {
                   <h3 className="font-weight-bold">{e.name}</h3>
                   <h5 className="text-white-50">{e.occupation}</h5>
                   <div className="d-flex my-4">
-                    {e.linkdin && 
+                    {e.linkedin && 
                       <div className="icon_over mr-2">
-                        <a href={e.linkdin}>
-                          <img src={Linkdin} width="15" alt="" />
+                        <a href={e.linkedin}>
+                          <img src={Linkedin} width="15" alt="" />
                         </a>
                       </div>
                       }

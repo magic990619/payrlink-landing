@@ -58,7 +58,7 @@ const footer = () => {
                 </h5>
               </div>
               <div className="d-flex mt-auto">
-                <a href="/" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/PayrOfficial" target="_blank" rel="noopener noreferrer">
                   <img src={Twitter}  alt="" className="mr-2" />
                 </a>
                 <a href="https://t.me/payrlink" target="_blank" rel="noopener noreferrer">
