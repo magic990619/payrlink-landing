@@ -579,11 +579,19 @@ h1 {
       align-items: center;
       flex-direction: column;
     }
-    .price_tag {
+    .sale_button {
       background-color: white;
+      border-color: transparent;
       color: #141132;
       border-radius: 15px;
       font-size: 1em;
+      font-weight: bold;
+      width: 300px;
+    }
+    .price_tag {
+      color: white;
+      text-decoration: underline;
+      font-size: 1.5em;
       font-weight: bold;
     }
   }
@@ -752,4 +760,30 @@ h1 {
   color: #e22828;
   text-align: right;
   width: 100%;
+}
+
+@media (min-width: 1700px) {
+  .my-col {
+    flex: 0 0 33%;
+    max-width: 33%;
+  }
+}
+
+.member-div {
+  position: relative;
+
+  .avatar-div {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    background:rgba(#2a2d57, 0.5);
+    width: 150px;
+    height: 150px;
+
+    .avatar {
+      width: 100%;
+    }
+  }
 }

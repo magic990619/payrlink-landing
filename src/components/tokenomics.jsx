@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import Cloud1 from "../assets/cloud1.png";
 import { Doughnut } from "react-chartjs-2";
 import Ellipse1 from "../assets/Ellipse1.png";
@@ -168,13 +168,19 @@ const tokenomics = () => {
                 </h4>
               </div>
               <div>
-                <h4 className="my-4">Target - to Raise ETH 540</h4>
+                <h4 className="my-4">Target - to Raise 540 ETH</h4>
                 <div className="round_div mx-auto my-5">
                   <h1>10%</h1>
                   <h5>Special Bonus</h5>
                 </div>
+                <div className="pb-4">
+                  <span className="price_tag px-5 py-2">1 PAYR = $0.031</span>
+                </div>
                 <div className="pb-5">
-                  <span className="price_tag px-5 py-2">Price 1 PAYR: $0.031</span>
+                  <Button 
+                    className="sale_button px-5 py-2"
+                    onClick={() => {window.open("https://forms.gle/bWLGZde6XJ9cPzHq8", "_blank")}}
+                  >Enroll</Button>
                 </div>
               </div>
             </div>
@@ -183,14 +189,10 @@ const tokenomics = () => {
                 <h4 className="font-weight-bold py-2 rounded-bottom">PUBLIC-SALE</h4>
               </div>
               <div>
-                <h4 className="my-4">Target – to Raise ETH 300</h4>
-
-                <div className="pb-5 mt-5">
-                  <span className="price_tag px-5 py-2">Price 1 PAYR: $0.034</span>
-                </div>
+                <h4 className="my-4">Target – to Raise 300 ETH</h4>
                 <div>
                   <h4>Bonus for IDO:</h4>
-                  <table className="d-flex justify-content-center pb-5">
+                  <table className="d-flex justify-content-center">
                     <tbody>
                       <tr className="mb-3">
                         <td
@@ -219,6 +221,15 @@ const tokenomics = () => {
                     </tbody>
                   </table>
                 </div>
+                <div className="pb-4 mt-5">
+                  <span className="price_tag px-5 py-2">1 PAYR = $0.034</span>
+                </div>
+                <div className="pb-5">
+                  <Button 
+                    className="sale_button px-5 py-2"
+                    onClick={() => {window.open("/presale", "_blank")}}
+                  >Go to Page</Button>
+                </div>             
               </div>
             </div>
           </Col>
