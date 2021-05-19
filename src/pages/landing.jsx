@@ -12,25 +12,31 @@ import Footer from "../components/footer";
 import Sticky from 'react-sticky-el';
 
 const landing = () => {
-  const news = "Our presale starts soon on May 26th. Early investors would earn more than 20% advantage. Once the presale is over, PayrLink team is going to host an airdrop event. The more tokens you have, the higher your chances of winning the airdrop. Join our community and stay tuned! - PayrLink Core Team -";
+  const news = "Our presale starts soon on May 26th. Early investors would earn more than 10% advantage. Once the presale is over, PayrLink team is going to host an airdrop event. The more tokens you have, the higher your chances of winning the airdrop. Join our community and stay tuned! - PayrLink Core Team -"
   return (
       <Container fluid className="main_layout">
         <Row className="header py-4 px-md-5">
           <Col
             xl={12}
-            className="d-md-flex justify-content-between align-items-center"
+            className="d-md-flex justify-content-between align-items-center  text-center text-md-left"
           >
             <div>
               <img src={Logo} alt="" />
             </div>
-            <div className="d-flex">
-              <Button variant="light" className="btn_white mr-3">
+            <div className="d-md-flex text-center text-md-right">
+              <Button
+                variant="link"
+                className="text_white font-weight-boldmr-2 mr-md-3 my-2 my-md-0 px-2"
+              >
+                Apps
+              </Button>
+              <Button variant="light" className="btn_white mr-2 mr-md-3 my-2 my-md-0">
                 ESCROW SERVICE
               </Button>
-              <Button variant="light" className="btn_white mr-3">
+              <Button variant="light" className="btn_white mr-2 mr-md-3 my-2 my-md-0">
                 ARBITRATION CENTER
               </Button>
-              <Button variant="light" className="btn_white" onClick={() => {window.open("https://farming.payrlink.com", "_blank")}}>
+              <Button variant="light" className="btn_white">
                 FARM
               </Button>
             </div>
