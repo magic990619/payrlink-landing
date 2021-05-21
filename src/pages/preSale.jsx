@@ -177,7 +177,7 @@ const PreSale = (props) => {
               <div className=" position-relative pre_block px-5 text-center">
                 <div className="app_secondery-70 pt-5">
                   <h1 className="text-white display-4 font-weight-bold py-3 mb-5">
-                    Pre Sale
+                    Public Sale
                   </h1>
                 </div>
               </div>
