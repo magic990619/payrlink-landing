@@ -72,16 +72,17 @@ export const getCrowdsaleData = async () => {
   const closed = await crowdsale.call("crowdsaleClosed");
 
   const data = {
-    currentPrice: toFixed(Number(currentPrice), 1),
+    // currentPrice: toFixed(Number(currentPrice), 1),
+    currentPrice: 192000,
     amountRaised: toFixed(Number(web3.utils.fromWei(amountRaised)), 1),
-    fundingGoal: 300,
+    fundingGoal: 125,
     startTime: Number(startTime),
     endTime: Number(endTime),
     closed
   }
 
-  // data.startTime = Math.floor(Date.UTC(2021, 4, 11, 10, 0, 0) / 1000);
-  // data.endTime = Math.floor(Date.UTC(2021, 4, 11, 10, 9, 0) / 1000);
+  data.startTime = Math.floor(Date.UTC(2021, 5, 15, 0, 0, 0) / 1000);
+  data.endTime = Math.floor(Date.UTC(2021, 5, 30, 0, 0, 0) / 1000);
   const percentage = toFixed(data.amountRaised / data.fundingGoal * 100, 1);
   const now = Math.floor(Date.now() / 1000);
 

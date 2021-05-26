@@ -164,17 +164,17 @@ const tokenomics = () => {
             <div className="chart_sec mb-5 text-white text-center trans">
               <div className="lable_top d-flex justify-content-center">
                 <h4 className="font-weight-bold py-2 rounded-bottom">
-                  PRE-SALE
+                  PRIVATE-SALE
                 </h4>
               </div>
               <div>
-                <h4 className="my-4">Target - to Raise 540 ETH</h4>
+                <h4 className="my-4"></h4>
                 <div className="round_div mx-auto my-5">
                   <h1>10%</h1>
                   <h5>Special Bonus</h5>
                 </div>
                 <div className="pb-4">
-                  <span className="price_tag px-5 py-2">1 PAYR = $0.031</span>
+                  <span className="price_tag px-5 py-2">1 ETH = 212,000 PAYR</span>
                 </div>
                 <div className="pb-5">
                   <Button 
@@ -189,40 +189,9 @@ const tokenomics = () => {
                 <h4 className="font-weight-bold py-2 rounded-bottom">PUBLIC-SALE</h4>
               </div>
               <div>
-                <h4 className="my-4">Target – to Raise 300 ETH</h4>
-                <div>
-                  <h4>Bonus for IDO:</h4>
-                  <table className="d-flex justify-content-center">
-                    <tbody>
-                      <tr className="mb-3">
-                        <td
-                          className="text-center mr-4"
-                          style={{ color: "#0398C3" }}
-                        >
-                          <h4 className="font-weight-bold my-3">ETH Raised</h4>
-                        </td>
-                        <td
-                          className="text-center "
-                          style={{ color: "#0398C3" }}
-                        >
-                          <h4 className="font-weight-bold my-3">Bonus</h4>
-                        </td>
-                      </tr>
-                      {icoData.map((e) => (
-                        <tr>
-                          <td>
-                            <h5 className="mr-5 text-left">{e.raised}</h5>
-                          </td>
-                          <td className="text-right">
-                            <h5>{e.bonus}</h5>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                <h4 className="my-4">Target – to Raise 125 ETH</h4>
                 <div className="pb-4 mt-5">
-                  <span className="price_tag px-5 py-2">1 PAYR = $0.034</span>
+                  <span className="price_tag px-5 py-2">1 ETH = 192,000 PAYR</span>
                 </div>
                 <div className="pb-5">
                   <Button 
