@@ -12,7 +12,7 @@ import Footer from "../components/footer";
 import Sticky from 'react-sticky-el';
 
 const landing = () => {
-  const news = "🚀Our private sale is live now. Early investors would get more than 10% advantages💰. Once the private sale is over, PayrLink team is going to host an airdrop event. The more tokens you have, the higher your chances of winning the airdrop🏆. Join our community and stay tuned! - PayrLink Core Team -"
+  const news = "🚀Public sale starts on June 3rd 00:00AM (UTC +0). Please visit the public sale page and buy PAYR with 10% discount than the listing price. Join our community and stay tuned! - PayrLink Core Team -"
   return (
       <Container fluid className="main_layout">
         <Row className="header py-4 px-md-5">
