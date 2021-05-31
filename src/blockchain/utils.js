@@ -81,8 +81,8 @@ export const getCrowdsaleData = async () => {
     closed
   }
 
-  data.startTime = Math.floor(Date.UTC(2021, 5, 15, 0, 0, 0) / 1000);
-  data.endTime = Math.floor(Date.UTC(2021, 5, 30, 0, 0, 0) / 1000);
+  data.startTime = Math.floor(Date.UTC(2021, 5, 4, 0, 0, 0) / 1000);
+  data.endTime = Math.floor(Date.UTC(2021, 5, 21, 0, 0, 0) / 1000);
   const percentage = toFixed(data.amountRaised / data.fundingGoal * 100, 1);
   const now = Math.floor(Date.now() / 1000);
 
