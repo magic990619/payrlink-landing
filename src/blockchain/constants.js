@@ -10,7 +10,7 @@ export const addresses = {
     1: '0x0',
   },
   crowdsale: {
-    42: '0x9D0500bD341c67A3B19865c4Cbd63835099B5F43',
+    42: '0x09F4eD5c4Ef70A8Ef6CCeB7F662A210Ea2b6246C',
     1: '0x0',
   },
   weth: {
