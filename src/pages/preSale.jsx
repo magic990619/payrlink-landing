@@ -29,7 +29,8 @@ const PreSale = (props) => {
   const {account} = useWallet();
   const salesData = useSalesData();
   const payr = usePayr();
-  const allowance = useAllowance();
+  //const allowance = useAllowance();
+  const allowance = true;
   const {accountLoading, ethBalance, payrAmount} = useAccountInfo();
   
   const presaleStatusText = (status) => {
@@ -37,6 +38,7 @@ const PreSale = (props) => {
       case 1: return "Starts in";
       case 2: return "Ends in";
       case 3: return "Ended";
+      case 4: return "Ended";
       default: return "is Coming soon";
     }
   }
@@ -47,15 +49,6 @@ const PreSale = (props) => {
       case 2: return data.endTime;
       case 3: return 0;
       default: return 0;
-    }
-  }
-
-  const presalePriceText = (status) => {
-    switch (status) {
-      case 1: return "Initial Price";
-      case 2: return "Current Price";
-      case 3: return "Ending Price";
-      default: return "Initial Price";
     }
   }
 
@@ -92,6 +85,20 @@ const PreSale = (props) => {
   const handleContribute = useCallback(async () => {
     if (ethAmount === "" || isNaN(ethAmount) || Number(ethAmount) <= 0) {
       setErrMsg("Invalid amount.");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+      return;
+    }
+    if (Number(ethAmount) < 0.1) {
+      setErrMsg("Minimum amount is 0.1ETH.");
+      setTimeout(() => {
+        setErrMsg(null);
+      }, 2000);
+      return;
+    }
+    if (Number(ethAmount) > 5) {
+      setErrMsg("Maximum amount is 5ETH.");
       setTimeout(() => {
         setErrMsg(null);
       }, 2000);
@@ -220,7 +227,7 @@ const PreSale = (props) => {
 
                     <h3 className="text-center">{salesData.amountRaised} ETH / {salesData.fundingGoal}</h3>
                     <div className="w-fit-content mx-auto">
-                      <h6 className="text-left mb-0 price-title">{presalePriceText(salesData.status)}</h6>
+                      <h6 className="text-left mb-0 price-title">Token Price</h6>
                       <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
                     </div>
                   </div>
@@ -251,7 +258,7 @@ const PreSale = (props) => {
                                 <h4 className="text-center mt-2">{payrAmount} PAYR</h4>
                               </div>
                               {
-                                salesData.status !== 3 && 
+                                salesData.status < 3 && 
                                   <div
                                     className="bg_gray d-flex align-items-center m py-1 px-3 rounded my-3 ml-auto"
                                     style={{ width: "fit-content" }}
@@ -267,7 +274,10 @@ const PreSale = (props) => {
                                   </div>
                               }
                               {
-                                salesData.status === 3 ? 
+                                salesData.status === 3 ?
+                                  <div><br/>Withdrawal of PAYR will become available soon.</div>
+                                :
+                                (salesData.status === 4 ? 
                                   payrAmount > 0 && (
                                     requestedWithdraw?
                                       <div className="mt-3">
@@ -348,6 +358,7 @@ const PreSale = (props) => {
                                     )
                                   }
                                 </>
+                                )
                               }
                               
                               

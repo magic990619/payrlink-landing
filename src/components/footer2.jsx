@@ -91,11 +91,6 @@ const footer = () => {
                   FARM
                 </a>
               </h5>
-              <h5 className="mb-3">
-                <a className="text-white font-weight-light" href="https://forms.gle/bWLGZde6XJ9cPzHq8" target="_blank" rel="noopener noreferrer">
-                  BUY TOKENS
-                </a>
-              </h5>
             </div>
           </div>
         </Col>

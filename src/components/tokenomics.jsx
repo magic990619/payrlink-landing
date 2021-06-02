@@ -180,7 +180,8 @@ const tokenomics = () => {
                   <Button 
                     className="sale_button px-5 py-2"
                     onClick={() => {window.open("https://forms.gle/bWLGZde6XJ9cPzHq8", "_blank")}}
-                  >Enroll</Button>
+                    disabled
+                  >Ended</Button>
                 </div>
               </div>
             </div>
