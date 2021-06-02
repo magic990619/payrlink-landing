@@ -83,32 +83,33 @@ const PreSale = (props) => {
 
 
   const handleContribute = useCallback(async () => {
+    const msgTimeout = 4000;
     if (ethAmount === "" || isNaN(ethAmount) || Number(ethAmount) <= 0) {
       setErrMsg("Invalid amount.");
       setTimeout(() => {
         setErrMsg(null);
-      }, 2000);
+      }, msgTimeout);
       return;
     }
     if (Number(ethAmount) < 0.1) {
       setErrMsg("Minimum amount is 0.1ETH.");
       setTimeout(() => {
         setErrMsg(null);
-      }, 2000);
+      }, msgTimeout);
       return;
     }
     if (Number(ethAmount) > 5) {
       setErrMsg("Maximum amount is 5ETH.");
       setTimeout(() => {
         setErrMsg(null);
-      }, 2000);
+      }, msgTimeout);
       return;
     }
     if (Number(ethAmount) > Number(ethBalance)) {
       setErrMsg("Insufficient balance.");
       setTimeout(() => {
         setErrMsg(null);
-      }, 2000);
+      }, msgTimeout);
       return;
     }
 

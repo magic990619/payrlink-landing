@@ -65,6 +65,7 @@ export const getCrowdsaleData = async () => {
   const web3 = getInfuraWeb3();
   const crowdsale = new Crowdsale({web3, networkId: constants.chainId});
   
+  const closed = await crowdsale.call("saleClosed");
   const amountRaised = await crowdsale.call("amountRaised");
   const startTime = await crowdsale.call("start");
   const endTime = await crowdsale.call("deadline");
@@ -89,6 +90,8 @@ export const getCrowdsaleData = async () => {
   else if (now < data.endTime) status = 2;
   else if (now < data.publishTime) status = 3;
   else status = 4;
+  
+  if (status < 3 && closed) status = 3;
 
   return {...data, percentage, status};
 }
