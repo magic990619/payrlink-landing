@@ -45,6 +45,12 @@ const teamData = [
     discreption: "A professional full-stack blockchain engineer. Gabriel has become quite a familiar face in the crypto community from helping several top projects with management, advisory, and dev work."
   },
   {
+    name: "Camilo I.",
+    occupation: "(Marketing Operator)",
+    telegram: "https://t.me/marketing_camilo",
+    discreption: "Experienced and energetic marketing professional with proven ability to create highly successful membership programs and insight driven integrated digital marketing campaigns."
+  },
+  {
     name: "Tarun T.",
     occupation: "(Designer)",
     telegram: "https://t.me/tarun_thusu",

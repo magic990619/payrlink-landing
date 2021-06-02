@@ -37,13 +37,13 @@ export class PAYR {
     }
   }
 
-  async getAllowance() {
+  async getPayrAllowance() {
     const account = this.web3.currentProvider.selectedAddress;
     const allowance = await this.payrtoken.call("allowance", account, addresses.crowdsale[this.networkId]);
     return allowance;
   }
 
-  async approve() {
+  async approvePayr() {
     try {
       const tx = await this.payrtoken.send("approve", null, addresses.crowdsale[this.networkId], ethers.constants.MaxUint256);
       return tx;

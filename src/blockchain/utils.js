@@ -65,32 +65,33 @@ export const getCrowdsaleData = async () => {
   const web3 = getInfuraWeb3();
   const crowdsale = new Crowdsale({web3, networkId: constants.chainId});
   
-  const currentPrice = await crowdsale.call("getCurrentPrice");
+  const closed = await crowdsale.call("saleClosed");
   const amountRaised = await crowdsale.call("amountRaised");
   const startTime = await crowdsale.call("start");
   const endTime = await crowdsale.call("deadline");
-  const closed = await crowdsale.call("crowdsaleClosed");
+  const publishTime = await crowdsale.call("publishDate");
 
   const data = {
-    // currentPrice: toFixed(Number(currentPrice), 1),
     currentPrice: 192000,
     amountRaised: toFixed(Number(web3.utils.fromWei(amountRaised)), 1),
     fundingGoal: 125,
     startTime: Number(startTime),
     endTime: Number(endTime),
-    closed
+    publishTime: Number(publishTime),
   }
 
-  data.startTime = Math.floor(Date.UTC(2021, 5, 4, 0, 0, 0) / 1000);
-  data.endTime = Math.floor(Date.UTC(2021, 5, 21, 0, 0, 0) / 1000);
+  // data.startTime = Math.floor(Date.UTC(2021, 5, 4, 0, 0, 0) / 1000);
+  // data.endTime = Math.floor(Date.UTC(2021, 5, 21, 0, 0, 0) / 1000);
   const percentage = toFixed(data.amountRaised / data.fundingGoal * 100, 1);
   const now = Math.floor(Date.now() / 1000);
 
   var status = 0;
-  if (closed) status = 3;
-  else if (now < data.startTime) status = 1;
+  if (now < data.startTime) status = 1;
   else if (now < data.endTime) status = 2;
-  else status = 3;
+  else if (now < data.publishTime) status = 3;
+  else status = 4;
+  
+  if (status < 3 && closed) status = 3;
 
   return {...data, percentage, status};
 }

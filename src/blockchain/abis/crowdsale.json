@@ -15,6 +15,11 @@
         "internalType": "uint256",
         "name": "_dead",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_publish",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
@@ -159,20 +164,6 @@
   },
   {
     "inputs": [],
-    "name": "crowdsaleClosed",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
     "name": "deadline",
     "outputs": [
       {
@@ -201,10 +192,38 @@
   },
   {
     "inputs": [],
+    "name": "publishDate",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
     "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "saleClosed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -281,20 +300,6 @@
   {
     "inputs": [],
     "name": "getETHBalance",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "getCurrentPrice",
     "outputs": [
       {
         "internalType": "uint256",

@@ -30,7 +30,7 @@ const landing = () => {
               >
                 Apps
               </Button>
-              <Button variant="light" className="btn_white mr-2 mr-md-3 my-2 my-md-0">
+              <Button variant="light" className="btn_white mr-2 mr-md-3 my-2 my-md-0" onClick={() => window.open("https://escrow.payrlink.com/", "_blank")}>
                 ESCROW SERVICE
               </Button>
               <Button variant="light" className="btn_white mr-2 mr-md-3 my-2 my-md-0">
