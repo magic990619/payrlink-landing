@@ -77,7 +77,7 @@ const footer = () => {
             </div>
             <div className="pl-4 border-left">
               <h5 className="mb-3">
-                <a className="text-white font-weight-light" href="/">
+                <a className="text-white font-weight-light" href="https://escrow.payrlink.com" target="_blank" rel="noopener noreferrer">
                   ESCROW SERVICE
                 </a>
               </h5>
