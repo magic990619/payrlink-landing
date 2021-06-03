@@ -92,7 +92,7 @@ const footer = () => {
                 </a>
               </h5>
               <h5 className="mb-3">
-                <a className="text-white font-weight-light" href="/presale" target="_blank" rel="noopener noreferrer">
+                <a className="text-white font-weight-light" href="/sale" target="_blank" rel="noopener noreferrer">
                   BUY TOKENS
                 </a>
               </h5>
