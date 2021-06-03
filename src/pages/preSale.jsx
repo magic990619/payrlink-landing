@@ -17,6 +17,10 @@ import usePayr from '../hooks/usePayr';
 import useAllowance from "../hooks/useAllowance";
 import useAccountInfo from "../hooks/useAccountInfo";
 import useSalesData from "../hooks/useSalesData";
+import MetaMaskWallet from "../assets/Metamask-wallet.png";
+import Guide1 from "../assets/guide1.png";
+import Guide2 from "../assets/guide2.png";
+import Guide3 from "../assets/guide3.png";
 
 const PreSale = (props) => {
 
@@ -377,6 +381,44 @@ const PreSale = (props) => {
               <Row className="px-4">
                 <Col sm={12} className="px-3 px-md-5">
                   <div className="app_secondery-70 border_radius p-3 py-md-4 px-md-5 text-white">
+                    <h2 className="text-center mt-2">How to Buy $PAYR</h2>
+                    <label className="font-weight-normal attention-desc text-center">
+                      Follow these 3 simple steps to buy $PAYR (or you can get help in our <a href="https://t.me/payrlink" target="_blank" rel="noreferrer">Telegram</a> group)
+                    </label>
+                    <h3 className="text-left mt-4">Step1. Create a MetaMask wallet</h3>
+                    <label className="font-weight-normal attention-desc mt-2">
+                      The $PAYR token is available on the Ethereum blockchain. MetaMask is the market leader in ERC20 (Ethereum) wallets. On Google Chrome, visit <a href="https://metamask.io" target="_blank" rel="noreferrer">metamask.io</a> to download the extension and set up a wallet. On mobile? Get MetaMask’s app for iPhone or Android.
+                    </label>
+                    <img src={MetaMaskWallet} alt="Metamask" className="mt-2" style={{width: 300}} />
+                    <h3 className="text-left mt-5">Step2. Send $ETH to MetaMask</h3>
+                    <label className="font-weight-normal attention-desc mt-2">
+                      Buy Ethereum through MetaMask or transfer it to your MetaMask wallet address from another wallet (e.g. Coinbase, Kraken or Binance).
+                    </label>
+                    <h3 className="text-left mt-5">Step3. Buy $PAYR on Our Public Sale Page</h3>
+                    <h4 className="font-weight-bold text-left mt-5">3.1 Connect MetaMask to PayrLink</h4>
+                    <label className="font-weight-normal attention-desc mt-1">
+                      Click ‘Connect Wallet’ button on top right and select MetaMask.
+                    </label>
+                    <img src={Guide1} alt="Guide1" style={{width: '100%'}} className="mt-2"/>
+                    <h4 className="font-weight-bold text-left mt-5">3.2 Contribute and Take Part in Public Sale</h4>
+                    <label className="font-weight-normal attention-desc mt-1">
+                      Enter the available $ETH amount in your MetaMask wallet and click ‘Contribute’.
+                    </label>
+                    <img src={Guide2} alt="Guide2" style={{width: '100%'}} className="mt-2"/>
+                    <h4 className="font-weight-bold text-left mt-5">3.3 Withdraw Your $PAYR after public sale ends</h4>
+                    <label className="font-weight-normal attention-desc mt-1">
+                    Click ‘Withdraw’ button to withdraw your $PAYR. You can withdraw your $PAYR after listed on uniswap after public sale. There will be some period that we provide liquidity and list $PAYR on uniswap after public sale ends. The exact date and time will be announced on our Telegram and Twitter channels.
+                    </label>
+                    <img src={Guide3} alt="Guide3" style={{width: '100%'}} className="mt-2"/>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+            
+            <Col sm={12} md={12} lg={9} xl={7} className="pb-3 my-4 my-xl-3">
+              <Row className="px-4">
+                <Col sm={12} className="px-3 px-md-5">
+                  <div className="app_secondery-70 border_radius p-3 py-md-4 px-md-5 text-white">
                     <h4 className="text-center mt-2">Attention!</h4>
                     <h4 className="font-weight-normal attention-desc">
                       This is an admin message... By contributing you agree to the
@@ -392,6 +434,7 @@ const PreSale = (props) => {
                 </Col>
               </Row>
             </Col>
+
           </Row>
         :
           <Row className="justify-content-center pb-5 bg_presale presale-loading-bg">
