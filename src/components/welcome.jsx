@@ -38,7 +38,7 @@ const welcome = () => {
           <Button
             variant="light"
             className="btn_white mr-md-5 mb-3 mb-xl-0 px-5 font-weight-bold"
-            onClick={() => {window.open("/presale", "_blank")}}
+            onClick={() => {window.open("/sale", "_blank")}}
           >
             BUY TOKENS
           </Button>

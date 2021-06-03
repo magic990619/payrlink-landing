@@ -197,7 +197,7 @@ const tokenomics = () => {
                 <div className="pb-5">
                   <Button 
                     className="sale_button px-5 py-2"
-                    onClick={() => {window.open("/presale", "_blank")}}
+                    onClick={() => {window.open("/sale", "_blank")}}
                   >Go to Page</Button>
                 </div>             
               </div>
