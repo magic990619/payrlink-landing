@@ -43,7 +43,7 @@ export const getBrowserWeb3 = () => {
 }
 
 export const getInfuraWeb3 = () => {
-  const infura_web3 = createWeb3(constants.rpcUrl);
+  const infura_web3 = createWeb3(constants.rpcUrl[constants.chainId]);
   return infura_web3;  
 }
 
