@@ -4,6 +4,7 @@ import { useWallet } from 'use-wallet';
 import ExcMark from "../assets/exclamation.svg";
 import Metamask from "../assets/metamask.svg";
 import WConnect from "../assets/wallet-Connect.svg";
+import * as constants from "../blockchain/constants";
 
 function ConectWallet(props) {
 
@@ -16,8 +17,16 @@ function ConectWallet(props) {
       props.onHide();
     }
 
-    if (wallet.error)
-      setError("Try to connect on Kovan network.");
+    const networkNames = {
+      42: "Kovan",
+      1: "Ethereum Mainnet"
+    }
+    if (wallet.error) {
+      setError("Try to connect on " + networkNames[constants.chainId] +" network.");
+      setTimeout(() => {
+        setError("");
+      }, 4000);
+    }
 
   }, [props, wallet]);
 
