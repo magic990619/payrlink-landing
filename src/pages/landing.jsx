@@ -12,7 +12,7 @@ import Footer from "../components/footer";
 import Sticky from 'react-sticky-el';
 
 const landing = () => {
-  const news = "🚀Public sale starts on June 4th 00:00AM (UTC +0). Please visit the public sale page to buy PAYR. Join our community and stay tuned! - PayrLink Core Team -"
+  const news = "🚀Public sale is live now. Please visit the public sale page and buy PAYR. Click BUY TOKENS below!  - PayrLink Core Team -"
   return (
       <Container fluid className="main_layout">
         <Row className="header py-4 px-md-5">
