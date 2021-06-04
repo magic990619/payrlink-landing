@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { Container, Row, Col, Button, Dropdown, Form } from "react-bootstrap";
 import { useWallet } from 'use-wallet';
 import LoaderSpinner from "react-loader-spinner";
-
+import Badge from '@material-ui/core/Badge';
 import Logo from "../assets/logo.png";
 import Footer2 from "../components/footer2";
 import ETH from "../assets/eth.svg";
@@ -233,7 +233,9 @@ const PreSale = (props) => {
                     <h3 className="text-center">{salesData.amountRaised} ETH / {salesData.fundingGoal}</h3>
                     <div className="w-fit-content mx-auto">
                       <h6 className="text-left mb-0 price-title">Token Price</h6>
-                      <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
+                      <Badge color="error" badgeContent="-20%">
+                        <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
+                      </Badge>
                     </div>
                   </div>
                 </Col>
