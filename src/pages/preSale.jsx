@@ -306,6 +306,7 @@ const PreSale = (props) => {
                                       </div>
                                   )
                                 : <>
+                                  <h6 className="text-right text-white-50 clickable" onClick={handleMaxClick}>Balance: {ethBalance}</h6>
                                   <Form.Control
                                     as="input"
                                     value={ethAmount}
@@ -314,7 +315,7 @@ const PreSale = (props) => {
                                     style={{height:"38px"}}
                                     disabled={!allowance || requestedApproval || requestedContribute}
                                   />
-                                  <h5 className="text-right text-white-50 clickable" onClick={handleMaxClick}>Max: {ethBalance}</h5>
+                                  <h6 className="text-center mt-2">Min: 0.1 ETH, Max: 5.0 ETH</h6>
                                   {
                                     allowance?
                                       (
