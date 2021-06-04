@@ -233,7 +233,7 @@ const PreSale = (props) => {
                     <h3 className="text-center">{salesData.amountRaised} ETH / {salesData.fundingGoal}</h3>
                     <div className="w-fit-content mx-auto">
                       <h6 className="text-left mb-0 price-title">Token Price</h6>
-                      <Badge color="error" badgeContent="-20%">
+                      <Badge color="secondary" badgeContent="-20%">
                         <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
                       </Badge>
                     </div>
