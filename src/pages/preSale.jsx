@@ -268,8 +268,8 @@ const PreSale = (props) => {
                                     className="bg_gray d-flex align-items-center m py-1 px-3 rounded my-3 ml-auto"
                                     style={{ width: "fit-content" }}
                                   >
-                                    <img src={ETH} alt="" className="mr-2" />
-                                    <h3 className="mb-0">ETH</h3>
+                                    <img src={ETH} alt="" className="mr-2" width={24} height={24}/>
+                                    <h4 className="mb-0">ETH</h4>
                                   </div>
                               }
                               {
@@ -306,6 +306,7 @@ const PreSale = (props) => {
                                       </div>
                                   )
                                 : <>
+                                  <h6 className="text-right text-white-50 clickable" onClick={handleMaxClick}>Balance: {ethBalance}</h6>
                                   <Form.Control
                                     as="input"
                                     value={ethAmount}
@@ -314,7 +315,7 @@ const PreSale = (props) => {
                                     style={{height:"38px"}}
                                     disabled={!allowance || requestedApproval || requestedContribute}
                                   />
-                                  <h5 className="text-right text-white-50 clickable" onClick={handleMaxClick}>Max: {ethBalance}</h5>
+                                  <h6 className="text-center mt-2">Min: 0.1 ETH, Max: 5.0 ETH</h6>
                                   {
                                     allowance?
                                       (
