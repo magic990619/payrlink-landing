@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.rel-div {
+  position: relative;
+}
+
+.discount-img {
+  position: absolute;
+  top: 0;
+  right: calc(50vw - 300px);
+  z-index: 999999;
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  .discount-img {
+    width: 70px;
+    right: calc(50vw - 240px);
+  }
+}

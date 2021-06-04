@@ -21,6 +21,7 @@ import MetaMaskWallet from "../assets/Metamask-wallet.png";
 import Guide1 from "../assets/guide1.png";
 import Guide2 from "../assets/guide2.png";
 import Guide3 from "../assets/guide3.png";
+import Discount from "../assets/discount1.png";
 
 const PreSale = (props) => {
 
@@ -184,8 +185,9 @@ const PreSale = (props) => {
       </Row>
       {
         salesData?
-          <Row className="justify-content-center pb-5 bg_presale">
-            <Col sm={12} md={12} lg={9} xl={7} className="">
+          <Row className="justify-content-center pb-5 bg_presale rel-div">
+            <img className="discount-img" src={Discount} />
+            <Col sm={12} md={12} lg={9} xl={7}>
               <div className=" position-relative pre_block px-5 text-center">
                 <div className="app_secondery-70 pt-5">
                   <h1 className="text-white display-4 font-weight-bold py-3 mb-5">
@@ -233,9 +235,7 @@ const PreSale = (props) => {
                     <h3 className="text-center">{salesData.amountRaised} ETH / {salesData.fundingGoal}</h3>
                     <div className="w-fit-content mx-auto">
                       <h6 className="text-left mb-0 price-title">Token Price</h6>
-                      <Badge color="secondary" badgeContent="-20%">
-                        <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
-                      </Badge>
+                      <h5 className="text-left">1 ETH = {salesData.currentPrice} PAYR</h5>
                     </div>
                   </div>
                 </Col>
