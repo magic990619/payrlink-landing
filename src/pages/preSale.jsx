@@ -268,8 +268,8 @@ const PreSale = (props) => {
                                     className="bg_gray d-flex align-items-center m py-1 px-3 rounded my-3 ml-auto"
                                     style={{ width: "fit-content" }}
                                   >
-                                    <img src={ETH} alt="" className="mr-2" />
-                                    <h3 className="mb-0">ETH</h3>
+                                    <img src={ETH} alt="" className="mr-2" width={24} height={24}/>
+                                    <h4 className="mb-0">ETH</h4>
                                   </div>
                               }
                               {
