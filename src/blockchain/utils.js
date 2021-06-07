@@ -52,7 +52,7 @@ export const formatAddress = (address) => {
 }
 
 export const getEthChainInfo = () => {
-  return {chainId: constants.chainId, rpcUrl: constants.rpcUrl};
+  return {chainId: constants.chainId, rpcUrl: constants.rpcUrl[constants.chainId]};
 }
 
 export const getEthBalance = async (addr) => {
