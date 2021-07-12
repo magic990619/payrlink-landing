@@ -117,14 +117,14 @@ const tokenomics = () => {
               Tokenomics
             </h1>
           </Col>
-          <Col lg={10} xl={5} className="px-xl-5 mb-5">
+          <Col lg={10} xl={10} className="px-xl-5 mb-5">
             <div className="chart_sec p-3 pb-5 p-xl-5 h-100" style={{backgroundColor: 'transparent'}}>
               <div className="chart_container mx-auto py-5">
                 <Doughnut
                   id="chart-area"
                   data={data}
-                  width={60}
-                  height={60}
+                  width={360}
+                  height={360}
                   options={{
                     maintainAspectRatio: false,
                     cutoutPercentage: 70,
@@ -160,7 +160,7 @@ const tokenomics = () => {
               </table>
             </div>
           </Col>
-          <Col lg={10} xl={5} className="px-xl-5 mb-5 tokenomics_side">
+          {/* <Col lg={10} xl={5} className="px-xl-5 mb-5 tokenomics_side">
             <div className="chart_sec mb-5 text-white text-center trans">
               <div className="lable_top d-flex justify-content-center">
                 <h4 className="font-weight-bold py-2 rounded-bottom">
@@ -202,7 +202,7 @@ const tokenomics = () => {
                 </div>             
               </div>
             </div>
-          </Col>
+          </Col> */}
           <Col xl="12" className="px-0">
             <img src={Cloud1} alt="" width="100%" />
           </Col>

@@ -12,7 +12,7 @@ import Footer from "../components/footer";
 import Sticky from 'react-sticky-el';
 
 const landing = () => {
-  const news = "🚀Public sale is live now. Please visit the public sale page and buy PAYR. Click BUY TOKENS below!  - PayrLink Core Team -"
+  const news = "🚀PAYR has been listed on Uniswap V2 and Probit Exchange. Please visit the sites and buy PAYR. Click BUY TOKENS below! (https://www.probit.com/app/exchange/PAYR-USDT)   - PayrLink Core Team -         🪐 PAYR Trading Competition is live on Probit now. Join and get huge REWARDS! (https://www.probit.com/en-us/competition/202107PAYR) - PayrLink Core Team -"
   return (
       <Container fluid className="main_layout">
         <Row className="header py-4 px-md-5">
@@ -36,7 +36,7 @@ const landing = () => {
               <Button variant="light" className="btn_white mr-2 mr-md-3 my-2 my-md-0">
                 ARBITRATION CENTER
               </Button>
-              <Button variant="light" className="btn_white">
+              <Button variant="light" className="btn_white" onClick={() => window.open("https://farm.payrlink.com/", "_blank")}>
                 FARM
               </Button>
             </div>

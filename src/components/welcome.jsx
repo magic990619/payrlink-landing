@@ -38,7 +38,7 @@ const welcome = () => {
           <Button
             variant="light"
             className="btn_white mr-md-5 mb-3 mb-xl-0 px-5 font-weight-bold"
-            onClick={() => {window.open("/sale", "_blank")}}
+            onClick={() => {window.open("https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0xc93d74b2cbccd0995b8214b38e15fcb4bf842220", "_blank")}}
           >
             BUY TOKENS
           </Button>
