@@ -87,12 +87,12 @@ const footer = () => {
                 </a>
               </h5>
               <h5 className="mb-3">
-                <a className="text-white font-weight-light" href="/">
+                <a className="text-white font-weight-light" href="https://farm.payrlink.com" target="_blank" rel="noopener noreferrer">
                   FARM
                 </a>
               </h5>
               <h5 className="mb-3">
-                <a className="text-white font-weight-light" href="/sale" target="_blank" rel="noopener noreferrer">
+                <a className="text-white font-weight-light" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0xc93d74b2cbccd0995b8214b38e15fcb4bf842220" target="_blank" rel="noopener noreferrer">
                   BUY TOKENS
                 </a>
               </h5>
